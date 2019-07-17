@@ -1,0 +1,5 @@
+mkdir
+git init
+git remote add
+git commit -m ""
+git push 
