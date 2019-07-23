@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 10:28:42 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/23 11:08:28 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/07/23 12:25:49 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ int		ft_alldigit(int ac, char **av)
 		}
 		i++;
 	}
-	ft_putendl("\nall digits");
 	return (1);
+}
+
+int		ft_stacks(int ac)
+{
+	return (ac);
 }
 
 int		ft_check(int ac, char **av)
@@ -43,18 +47,22 @@ int		ft_check(int ac, char **av)
 		ft_putendl(av[i]);
 		i++;
 	}
+	ft_putendl("_");
+	ft_putendl("a");
 	return (1);
 }
 
 int		main(int ac, char **av)
 {
-	ft_putnbr(ac);
 	if (ac == 1)
 		return (0);
 	if (ac > 1)
 	{
 		if (!ft_alldigit(ac, av))
+		{
+			ft_putendl("error");
 			return (-1);
+		}
 		ft_check(ac, av);
 	}
 	return (0);
