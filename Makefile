@@ -6,7 +6,7 @@
 #    By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 10:30:37 by ksefeane          #+#    #+#              #
-#    Updated: 2019/07/23 10:39:01 by ksefeane         ###   ########.fr        #
+#    Updated: 2019/07/23 10:53:44 by ksefeane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,14 @@ all: $(NAME)
 
 $(NAME): $(LIB)
 	@$(BUILD) $(NAME) $(SRC) $(LIB)
-	@echo "app created"
+	@echo "$(NAME) created"
 
 $(LIB):
 	@make re -C libft
 
 clean:
 	@rm -rf $(NAME)
-	@echo "app deleted"
+	@echo "$(NAME) deleted"
 
 fclean: clean
 
