@@ -1,0 +1,5 @@
+libft/*.o
+libft/libft.a
+*.swp
+*.swo
+
