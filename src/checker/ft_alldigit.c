@@ -6,20 +6,20 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 12:45:37 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/24 12:45:42 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/07/24 16:28:11 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_alldigit(int ac, char **av)
+int		ft_alldigit(int ni, char **av)
 {
 	int		i;
 	int		j;
 
-	i = 1;
+	i = 0;
 	j = 0;
-	while (i < ac)
+	while (i < ni)
 	{
 		while (av[i][j])
 		{
