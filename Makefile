@@ -6,30 +6,32 @@
 #    By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 10:30:37 by ksefeane          #+#    #+#              #
-#    Updated: 2019/07/23 10:53:44 by ksefeane         ###   ########.fr        #
+#    Updated: 2019/07/24 12:40:53 by ksefeane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = checker
+CHECK = checker
 
-SRC = ft_check.c
+C_SRC = src/checker/*
+
+C_INC = inc/checker.h
 
 LIB = libft/libft.a
 
 BUILD = gcc -Wall -Werror -Wextra -o
 
-all: $(NAME)
+all: $(CHECK)
 
-$(NAME): $(LIB)
-	@$(BUILD) $(NAME) $(SRC) $(LIB)
-	@echo "$(NAME) created"
+$(CHECK): $(LIB)
+	@$(BUILD) $(CHECK) $(C_SRC) $(LIB)
+	@echo "$(CHECK) created"
 
 $(LIB):
 	@make re -C libft
 
 clean:
-	@rm -rf $(NAME)
-	@echo "$(NAME) deleted"
+	@rm -rf $(CHECK)
+	@echo "$(CHECK) deleted"
 
 fclean: clean
 
