@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 12:46:09 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/24 16:26:30 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/07/26 11:13:13 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int		main(int ac, char **av)
 {
-	if (ac == 1)
-		return (0);
 	if (ac > 1)
 	{
 		if (!ft_alldigit(ac - 1, av + 1))
@@ -25,5 +23,7 @@ int		main(int ac, char **av)
 		}
 		ft_checker(ac - 1, ft_atoai(ac - 1, av + 1));
 	}
+	else
+		ft_putchar('\n');
 	return (0);
 }
