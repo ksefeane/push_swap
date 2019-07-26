@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   ft_maxgap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/24 12:28:33 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/26 12:56:06 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/07/26 12:50:27 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/07/26 12:56:43 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "../../inc/checker.h"
 
-# include "../libft/libft.h"
+int		ft_maxgap(int ni, int *ai)
+{
+	int i;
+	int k;
 
-int		ft_alldigit(int ni, char **av);
-int		*ft_atoai(int ni, char **av);
-int		ft_checker(int ni, int *ai);
-int		ft_sortop(int ni, int *ai, char *op);
-void	ft_printgaps(int n);
-int		ft_countnum(int n);
-int		ft_maxgap(int ni, int *ai);
-
-#endif
+	i = 0;
+	k = 0;
+	while (i < ni)
+	{
+		if (k < ft_countnum(ai[i]))
+			k = ft_countnum(ai[i]);
+		i++;
+	}
+	return (k);
+}
