@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_printer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/24 12:34:46 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/31 13:54:58 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/07/31 13:15:10 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/07/31 13:22:51 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(int ni, int *ai)
+int		ft_printer(int ni, int *ai, int *bi)
 {
-	int		i;
-	int		*bi;
-	int		g;
+	int i;
+	int g;
 
 	i = 0;
 	g = ft_maxgap(ni, ai);
-	if (!(bi = ft_atoai(ni, NULL)))
-		return (0);
-	ft_printer(ni, ai, bi);
-	ft_swapper(ni, &ai, &bi, "sa");
-	ft_putendl("");
-	ft_printer(ni, ai, bi);
+	while (i < ni)
+	{
+		ft_putnbr(ai[i]);
+		ft_printgaps(g);
+		ft_putnbr(bi[i]);
+		ft_putchar('\n');
+		i++;
+	}
+	ft_putchar('_');
+	ft_printgaps(g);
+	ft_putendl("_");
+	ft_putchar('a');
+	ft_printgaps(g);
+	ft_putendl("b");
 	return (1);
 }

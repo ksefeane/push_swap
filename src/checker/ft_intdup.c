@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_intdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/24 12:34:46 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/31 13:54:58 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/07/31 14:04:31 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/07/31 14:08:50 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(int ni, int *ai)
+int		*ft_intdup(int ni, int *n)
 {
 	int		i;
-	int		*bi;
-	int		g;
-
+	int		*a;
+	
 	i = 0;
-	g = ft_maxgap(ni, ai);
-	if (!(bi = ft_atoai(ni, NULL)))
-		return (0);
-	ft_printer(ni, ai, bi);
-	ft_swapper(ni, &ai, &bi, "sa");
-	ft_putendl("");
-	ft_printer(ni, ai, bi);
-	return (1);
+	if (!(a = (int *)malloc(sizeof(int) * ni)))
+		return (NULL);
+	while (i < ni)
+	{
+		a[i] = n[i];
+		i++;
+	}
+	return (a);
 }
