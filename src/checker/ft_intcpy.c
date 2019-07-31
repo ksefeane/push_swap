@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_intcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/24 12:34:46 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/31 15:23:03 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/07/31 15:15:34 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/07/31 15:17:08 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(int ni, int *ai)
+int		ft_intcpy(int ni, int *a, int *b)
 {
 	int		i;
-	int		*bi;
-	int		g;
 
 	i = 0;
-	g = ft_maxgap(ni, ai);
-	if (!(bi = ft_atoai(ni, NULL)))
-		return (0);
-	ft_printer(ni, ai, bi);
-	ft_swapper(ni, &ai, &bi, "pa");
-	ft_putendl("");
-	ft_printer(ni, ai, bi);
+	while (i < ni)
+	{
+		a[i] = b[i];
+		i++;
+	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 12:28:33 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/31 14:09:12 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/07/31 15:22:31 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int		ft_maxgap(int ni, int *ai);
 int		ft_swapper(int ni, int **ai, int **bi, char *c);
 int		ft_printer(int ni, int *ai, int *bi);
 int		*ft_intdup(int ni, int *n);
+int		ft_intcpy(int ni, int *a, int *b);
 
 #endif

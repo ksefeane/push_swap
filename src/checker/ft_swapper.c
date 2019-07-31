@@ -6,46 +6,56 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 10:21:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/31 14:17:22 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/07/31 15:21:52 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		*sa(int ni, int *ai)
+int		sa(int ni, int **ai)
 {
-		int		*a;
+	int		*a;
+	int		*b;
 		
-		if (!(a = ft_intdup(ni, ai)))
-			return (NULL);
-		a[0] = ai[1];
-		a[1] = ai[0];
-		return (a);
+	if (!(a = ft_intdup(ni, *ai)))
+		return (0);
+	b = *ai;
+	a[0] = b[1];
+	a[1] = b[0];
+	*ai = ft_intdup(ni, a);
+	free(b);
+	free(a);
+	return (1);
+}
+
+int		pa(int ni, int **ai, int **bi)
+{
+	int		*a;
+	int		*b;
+	int		*x;
+	int		*y;
+
+	if ((!(a = ft_atoai(ni + 1, NULL))) && (!(b = ft_atoai(ni - 1, NULL))))
+		return (0);
+	x = *ai;
+	y = *bi;
+	a[0] = y[0];
+	ft_intcpy(ni, &a[1], x);
+	free(x);
+	free(y);
+	return (1);
 }
 
 int		ft_swapper(int ni, int **ai, int **bi, char *c)
 {
-	int *a;
-	int	*b;
-	char *x;
-
-	x = c;
-	a = *ai;
-	b = *bi;
-	if (ft_strcmp(c, "sa"))
-	{
-
-	}
-	else if (ft_strcmp(c, "sb"))
-	else if (ft_strcmp(c, "sb"))
-	else if (ft_strcmp(c, "sb"))
-	else if (ft_strcmp(c, "sb"))
-	else if (ft_strcmp(c, "sb"))
-	else if (ft_strcmp(c, "sb"))
-	else if (ft_strcmp(c, "sb"))
-	else if (ft_strcmp(c, "sb"))
-	else if (ft_strcmp(c, "sb"))
-
+	if (ft_strequ(c, "sa"))
+		sa(ni, ai);
+	else if (ft_strequ(c, "sb"))
+		sa(ni, bi);
+	else if (ft_strequ(c, "ss"))
+		(sa(ni, ai)) ? sa(ni, bi) : 0;
+	else if (ft_strequ(c, "pa"))
+		pa(ni, ai, bi);
 	return (1);
 	//sa - swap top 2 a elements
 	//sb
