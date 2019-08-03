@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printer.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 13:15:10 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 14:33:48 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/07/24 12:46:09 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/03 13:26:00 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_printer(int na, int nb, char **a, char **b)
+int		main(int ac, char **av)
 {
-	int		i;
-	int		j;
-	int		k;
-
-	i = 0;
-	j = 0;
-	k = (na >= nb) ? na : nb;
-	while (i < k)
+	if (ac > 1)
 	{
-		ft_putstr(a[i]);
-		ft_putstr(" ");
-		(b) ? ft_putstr(b[i]) : ft_putstr("0");
-		ft_putchar('\n');
-		i++;
+		if (!ft_alldigit(ac - 1, av + 1))
+		{
+			ft_putendl("error");
+			return (-1);
+		}
+		ft_checker(ac - 1, 0, av + 1, NULL);
 	}
-	ft_putendl("_ _");
-	ft_putendl("a b");
-	return (1);
+	else
+		ft_putchar('\n');
+	return (0);
 }

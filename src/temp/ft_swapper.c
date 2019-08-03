@@ -6,27 +6,28 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 10:21:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 14:33:20 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/07/31 15:34:11 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		sa(char ***a)
+int		sa(int ni, int **ai)
 {
-	char	**x;
-	char	**y;
+	int		*a;
+	int		*b;
 		
-	if (!(x = ft_strxdup(*a)))
+	if (!(a = ft_intdup(ni, *ai)))
 		return (0);
-	y = *a;
-	ft_strcpy(x[0], y[1]);
-	ft_strcpy(x[1], y[0]);
-	*a = ft_strxdup(x);
-	free(x);
+	b = *ai;
+	a[0] = b[1];
+	a[1] = b[0];
+	*ai = ft_intdup(ni, a);
+	free(b);
+	free(a);
 	return (1);
 }
-/*
+
 int		pa(int ni, int **ai, int **bi)
 {
 	int		*a;
@@ -46,22 +47,18 @@ int		pa(int ni, int **ai, int **bi)
 	free(y);
 	return (1);
 }
-*/
-int		ft_swapper(int na, int nb, char ***a, char ***b, char *c)
+
+int		ft_swapper(int ni, int **ai, int **bi, char *c)
 {
 	if (ft_strequ(c, "sa"))
-		sa(a);
-	if (na || nb || a || b)
-		return (1);
-/*	else if (ft_strequ(c, "sb"))
+		sa(ni, ai);
+	else if (ft_strequ(c, "sb"))
 		sa(ni, bi);
 	else if (ft_strequ(c, "ss"))
 		(sa(ni, ai)) ? sa(ni, bi) : 0;
 	else if (ft_strequ(c, "pa"))
 		pa(ni, ai, bi);
-
-	
-*/	return (1);
+	return (1);
 	//sa - swap top 2 a elements
 	//sb
 	//ss - sa & sb

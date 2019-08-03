@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printer.c                                       :+:      :+:    :+:   */
+/*   ft_alldigit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 13:15:10 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 14:33:48 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/07/24 12:45:37 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/07/26 11:29:14 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_printer(int na, int nb, char **a, char **b)
+int		ft_alldigit(int ni, char **av)
 {
 	int		i;
 	int		j;
-	int		k;
 
 	i = 0;
 	j = 0;
-	k = (na >= nb) ? na : nb;
-	while (i < k)
+	while (i < ni)
 	{
-		ft_putstr(a[i]);
-		ft_putstr(" ");
-		(b) ? ft_putstr(b[i]) : ft_putstr("0");
-		ft_putchar('\n');
+		while (av[i][j])
+		{
+			if (!ft_isdigit(av[i][j]))
+				return (0);
+			j++;
+		}
+		j = 0;
 		i++;
 	}
-	ft_putendl("_ _");
-	ft_putendl("a b");
 	return (1);
 }

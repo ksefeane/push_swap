@@ -6,25 +6,17 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 12:34:46 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/31 15:23:03 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/03 14:26:19 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(int ni, int *ai)
+int		ft_checker(int na, int nb, char **a, char **b)
 {
-	int		i;
-	int		*bi;
-	int		g;
-
-	i = 0;
-	g = ft_maxgap(ni, ai);
-	if (!(bi = ft_atoai(ni, NULL)))
-		return (0);
-	ft_printer(ni, ai, bi);
-	ft_swapper(ni, &ai, &bi, "pa");
+	ft_printer(na, nb, a, b);
+	ft_swapper(na, nb, &a, &b, "sa");
 	ft_putendl("");
-	ft_printer(ni, ai, bi);
+	ft_printer(na, nb, a, b);
 	return (1);
 }

@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printer.c                                       :+:      :+:    :+:   */
+/*   ft_strxdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 13:15:10 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 14:33:48 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/03 13:45:08 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/03 14:05:46 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_printer(int na, int nb, char **a, char **b)
+char	**ft_strxdup(char **s)
 {
-	int		i;
-	int		j;
+	char	**w;
+	int		n;
 	int		k;
 
-	i = 0;
-	j = 0;
-	k = (na >= nb) ? na : nb;
-	while (i < k)
+	k = 0;
+	n = ft_nstr(s);
+	if (!(w = (char **)malloc(sizeof(char *) * (n + 1))))
+		return (NULL);
+	while (k < n)
 	{
-		ft_putstr(a[i]);
-		ft_putstr(" ");
-		(b) ? ft_putstr(b[i]) : ft_putstr("0");
-		ft_putchar('\n');
-		i++;
+		w[k] = ft_strdup(s[k]);
+		k++;
 	}
-	ft_putendl("_ _");
-	ft_putendl("a b");
-	return (1);
+	w[k] = NULL;
+	return (w);
 }

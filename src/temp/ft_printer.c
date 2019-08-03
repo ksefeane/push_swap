@@ -6,30 +6,32 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 13:15:10 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 14:33:48 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/07/31 14:46:46 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_printer(int na, int nb, char **a, char **b)
+int		ft_printer(int ni, int *ai, int *bi)
 {
-	int		i;
-	int		j;
-	int		k;
+	int i;
+	int g;
 
 	i = 0;
-	j = 0;
-	k = (na >= nb) ? na : nb;
-	while (i < k)
+	g = ft_maxgap(ni, ai);
+	while (i < ni)
 	{
-		ft_putstr(a[i]);
-		ft_putstr(" ");
-		(b) ? ft_putstr(b[i]) : ft_putstr("0");
+		ft_putnbr(ai[i]);
+		ft_printgaps(g);
+		ft_putnbr(bi[i]);
 		ft_putchar('\n');
 		i++;
 	}
-	ft_putendl("_ _");
-	ft_putendl("a b");
+	ft_putchar('_');
+	ft_printgaps(g);
+	ft_putendl("_");
+	ft_putchar('a');
+	ft_printgaps(g);
+	ft_putendl("b");
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 12:46:09 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/26 11:13:13 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/03 13:28:20 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		main(int ac, char **av)
 			ft_putendl("error");
 			return (-1);
 		}
-		ft_checker(ac - 1, ft_atoai(ac - 1, av + 1));
+		ft_checker(ac - 1, 0, av + 1, NULL);
 	}
 	else
 		ft_putchar('\n');
