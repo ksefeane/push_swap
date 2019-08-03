@@ -6,53 +6,56 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 10:21:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 14:33:20 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/03 16:01:48 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		sa(char ***a)
+static int		sa(char ***a)
 {
 	char	**x;
 	char	**y;
-		
-	if (!(x = ft_strxdup(*a)))
+	int		i;
+
+	i = ft_nstr(*a);
+	if (!(x = ft_strxdup(*a, i)))
 		return (0);
 	y = *a;
 	ft_strcpy(x[0], y[1]);
 	ft_strcpy(x[1], y[0]);
-	*a = ft_strxdup(x);
+	*a = ft_strxdup(x, i);
 	free(x);
 	return (1);
 }
-/*
-int		pa(int ni, int **ai, int **bi)
-{
-	int		*a;
-	int		*b;
-	int		*x;
-	int		*y;
 
-	if ((!(a = ft_atoai(ni + 1, NULL))) || (!(b = ft_intdup(ni - 1, *bi))))
+static int		pa(int na, int nb, char ***a, char ***b)
+{
+	char	**s1;
+	char	**s2;
+	char	**x;
+	char	**y;
+
+	x = *a;
+	y = *b;
+	if (!(s1 = ft_strxdup(y, 1)))
 		return (0);
-	x = *ai;
-	y = *bi;
-	a[0] = y[0];
-	ft_intcpy(ni + 1, &a[1], x);
-	*ai = ft_intdup(ni + 1, a);
-	*bi = b;
+	if (!(s2 = ft_strxdup(x, na - 1)))
+		return (0);
+	ft_strcpy(s1[0], y[0]);
+	(nb) ? *a = ft_strxdup(s1, 1) : 0;
+	*b = ft_strxdup(s2, na - 1);
 	free(x);
 	free(y);
 	return (1);
 }
-*/
+
 int		ft_swapper(int na, int nb, char ***a, char ***b, char *c)
 {
 	if (ft_strequ(c, "sa"))
 		sa(a);
-	if (na || nb || a || b)
-		return (1);
+	else if (ft_strequ(c, "pa"))
+		pa(nb, na, b, a);
 /*	else if (ft_strequ(c, "sb"))
 		sa(ni, bi);
 	else if (ft_strequ(c, "ss"))
@@ -61,7 +64,9 @@ int		ft_swapper(int na, int nb, char ***a, char ***b, char *c)
 		pa(ni, ai, bi);
 
 	
-*/	return (1);
+*/	if (na || nb || *a || *b || c)
+		return (1);
+	return (1);
 	//sa - swap top 2 a elements
 	//sb
 	//ss - sa & sb

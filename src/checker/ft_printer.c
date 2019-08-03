@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 13:15:10 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 14:33:48 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/03 15:16:02 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int		ft_printer(int na, int nb, char **a, char **b)
 	}
 	ft_putendl("_ _");
 	ft_putendl("a b");
+	ft_putendl("");
 	return (1);
 }
