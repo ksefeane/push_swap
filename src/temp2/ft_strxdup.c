@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_strxdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/05 12:30:46 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/05 13:49:57 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/03 13:45:08 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/05 10:48:20 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(char **a)
+char	**ft_strxdup(char **s, int x)
 {
-	link	*la;
+	char	**w;
+	int		k;
+	int		n;
 
-	la = ft_atoilst(char **a);
-	return (1);
+	k = 0;
+	if (!s)
+		return (NULL);
+	n = ft_nstr(s) - x;
+	if (n < 1)
+		return (NULL);
+	if (!(w = (char **)malloc(sizeof(char *) * (n + 1))))
+		return (NULL);
+	while (k < n)
+	{
+		w[k] = ft_strdup(s[k]);
+		k++;
+	}
+	w[k] = NULL;
+	return (w);
 }

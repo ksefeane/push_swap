@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 10:21:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 16:01:48 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/05 10:49:22 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ static int		sa(char ***a)
 	int		i;
 
 	i = ft_nstr(*a);
-	if (!(x = ft_strxdup(*a, i)))
+	if (!(x = ft_strxdup(*a, 0)))
 		return (0);
 	y = *a;
 	ft_strcpy(x[0], y[1]);
 	ft_strcpy(x[1], y[0]);
-	*a = ft_strxdup(x, i);
+	*a = ft_strxdup(x, 0);
 	free(x);
 	return (1);
 }
 
-static int		pa(int na, int nb, char ***a, char ***b)
+static int		pa(char ***a, char ***b)
 {
 	char	**s1;
 	char	**s2;
@@ -38,13 +38,13 @@ static int		pa(int na, int nb, char ***a, char ***b)
 
 	x = *a;
 	y = *b;
-	if (!(s1 = ft_strxdup(y, 1)))
+	if (!(s1 = ft_strxdup(y, 0)))
 		return (0);
-	if (!(s2 = ft_strxdup(x, na - 1)))
+	if (!(s2 = ft_strxdup(x, 0)))
 		return (0);
 	ft_strcpy(s1[0], y[0]);
-	(nb) ? *a = ft_strxdup(s1, 1) : 0;
-	*b = ft_strxdup(s2, na - 1);
+	*a = ft_strxdup(s1, 0);
+	*b = ft_strxdup(s2, 0);
 	free(x);
 	free(y);
 	return (1);
@@ -55,7 +55,7 @@ int		ft_swapper(int na, int nb, char ***a, char ***b, char *c)
 	if (ft_strequ(c, "sa"))
 		sa(a);
 	else if (ft_strequ(c, "pa"))
-		pa(nb, na, b, a);
+		pa(a, b);
 /*	else if (ft_strequ(c, "sb"))
 		sa(ni, bi);
 	else if (ft_strequ(c, "ss"))

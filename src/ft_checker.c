@@ -6,16 +6,16 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 12:30:46 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/05 13:49:57 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/05 13:00:10 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
 int		ft_checker(char **a)
-{
-	link	*la;
+{/*
+	t_list	*la;
 
 	la = ft_atoilst(char **a);
-	return (1);
+*/	return (1);
 }

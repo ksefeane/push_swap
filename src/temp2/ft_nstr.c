@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_nstr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/05 12:30:46 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/05 13:49:57 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/03 13:51:50 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/03 14:10:24 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(char **a)
+int		ft_nstr(char **s)
 {
-	link	*la;
+	int		i;
 
-	la = ft_atoilst(char **a);
-	return (1);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
