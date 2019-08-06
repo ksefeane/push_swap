@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lnknew.c                                        :+:      :+:    :+:   */
+/*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/05 13:06:12 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/05 14:05:14 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/05 12:30:46 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/06 10:43:16 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-link	*ft_lnknew(int n)
+int		ft_checker(char **a)
 {
-	link	*k;
+	link	*la;
 
-	k = NULL;
-	if (!(k = (link *)malloc(sizeof(link))))
-		return (NULL);
-	k->num = NULL;
-	k->next = NULL;
-	return (k);
+	la = ft_atoilst(char **a);
+//	ft_printer(la);
+//	ft_swapper(la);
+//	ft_printer(la);
+	return (1);
 }
