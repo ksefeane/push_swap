@@ -14,7 +14,24 @@
 
 void	ft_printer(lnk *a, lnk *b, char *moves)
 {
-	while (a)
+	int	i;
+
+	i = 0;
+	while (moves[i])
+	{
+		ft_putstr(a->num);
+		ft_putstr(" ");
+		ft_putendl(b->num);
+		i++;
+		(a->next) ? a = a->next : 0;
+		(b->next) ? b = b->next : 0;
+	}
+	ft_putstr("a b  ");
+	ft_putendl(moves);
+	ft_putendl("");
+
+	
+/*	while (a)
 	{
 		ft_putstr(a->num);
 		ft_putstr(" ");
@@ -30,5 +47,5 @@ void	ft_printer(lnk *a, lnk *b, char *moves)
 	}
 	ft_putendl("b");
 	
-	ft_putendl("");
+	ft_putendl("");*/
 }
