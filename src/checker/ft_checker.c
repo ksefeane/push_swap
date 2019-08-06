@@ -12,20 +12,16 @@
 
 #include "../../inc/checker.h"
 
-int		ft_checker(lnk *a)
+int		ft_checker(char **av, char *i)
 {
-	lnk		*b;
+	lnk	*a;
+	lnk	*b;
+	char	**moves;
 
+	a = ft_builder(av);
 	b = NULL;
+	moves = ft_strsplit(i, '\n');
 	ft_printer(a, b);
-
-	ft_swapper(&a, &b, "pb");
-	ft_printer(a, b);
-
-	ft_swapper(&a, &b, "pb");
-	ft_printer(a, b);
-
-	ft_swapper(&a, &b, "sb");
-	ft_printer(a, b);
+	ft_instructor(a, b, moves);
 	return (1);
 }

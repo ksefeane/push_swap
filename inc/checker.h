@@ -29,8 +29,9 @@ void	ft_lnkdell(lnk **node);
 
 lnk		*ft_builder(char **s);
 void	ft_printer(lnk *a, lnk *b);
+int		ft_instructor(lnk *a, lnk *b, char **moves);
 
-int		ft_checker(lnk *a);
+int		ft_checker(char	**av, char *i);
 int		ft_swapper(lnk **a, lnk **b, char *c);
 
 int		ft_alldigit(int ni, char **av);

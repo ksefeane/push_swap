@@ -14,12 +14,12 @@
 
 int		main(int ac, char **av)
 {
-	lnk	*a;
+	char	*w;
 
 	if (ac > 1)
 	{
-		a = ft_builder(av + 1);
-		ft_checker(a);
+		w = ft_strdup("sa\nra\npa");
+		ft_checker(av + 1, w);
 	}
 	else
 		ft_putchar('\n');
