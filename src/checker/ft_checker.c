@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 12:29:13 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 13:32:01 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/06 14:14:13 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,14 @@ int		ft_checker(lnk *a)
 
 	b = NULL;
 	ft_printer(a, b);
-	ft_swapper(&a, &b, "sa");
+
+	ft_swapper(&a, &b, "pb");
+	ft_printer(a, b);
+
+	ft_swapper(&a, &b, "pb");
+	ft_printer(a, b);
+
+	ft_swapper(&a, &b, "sb");
 	ft_printer(a, b);
 	return (1);
 }

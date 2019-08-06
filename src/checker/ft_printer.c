@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 12:02:06 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 12:09:18 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/06 13:53:32 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	ft_printer(lnk *a, lnk *b)
 		b = b->next;
 	}
 	ft_putendl("b");
+	
+	ft_putendl("");
 }
