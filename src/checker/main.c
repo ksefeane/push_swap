@@ -15,10 +15,12 @@
 int		main(int ac, char **av)
 {
 	char	*w;
+	int	fd;
 
 	if (ac > 1)
 	{
-		w = ft_strdup("sa\nra\npa");
+		fd = 1;
+		get_next_line(fd, &w);
 		ft_checker(av + 1, w);
 	}
 	else

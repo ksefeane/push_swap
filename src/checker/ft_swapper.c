@@ -71,11 +71,13 @@ static int	ft_rra(lnk **node)
 	a = *node;
 	if (!a)
 		return (0);
-	b = a->next;
-	c = b;
-	while (b->next->next)
-		b = b->next;
-	c = b->next;
+	c = a->next;
+	b = a;
+	while (c->next)
+	{
+		b = c;
+		c = c->next;
+	}
 	b->next = NULL;
 	*node = c;
 	c->next = a;

@@ -20,8 +20,7 @@ int		ft_checker(char **av, char *i)
 
 	a = ft_builder(av);
 	b = NULL;
-	moves = ft_strsplit(i, '\n');
-	ft_printer(a, b);
+	moves = ft_strsplit(i, ' ');
 	ft_instructor(a, b, moves);
 	return (1);
 }

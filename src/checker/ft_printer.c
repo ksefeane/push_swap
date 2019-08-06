@@ -12,7 +12,7 @@
 
 #include "../../inc/checker.h"
 
-void	ft_printer(lnk *a, lnk *b)
+void	ft_printer(lnk *a, lnk *b, char *moves)
 {
 	while (a)
 	{
@@ -20,7 +20,8 @@ void	ft_printer(lnk *a, lnk *b)
 		ft_putstr(" ");
 		a = a->next;
 	}
-	ft_putendl("a");
+	ft_putstr("a ");
+	ft_putendl(moves);
 	while (b)
 	{
 		ft_putstr(b->num);
