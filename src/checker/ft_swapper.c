@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_swapper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/24 12:46:09 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 13:30:05 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/06 13:27:11 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/06 13:43:06 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		main(int ac, char **av)
+static void	ft_sa(lnk **node)
 {
-	lnk	*a;
+	lnk		*j;
+	lnk		*k;
 
-	if (ac > 1)
-	{
-		a = ft_builder(av + 1);
-		ft_checker(a);
-	}
-	else
-		ft_putchar('\n');
-	return (0);
+	j = *node;
+	k = j->next;
+	j->next = k->next;
+	k->next = j;
+	*node = k;
+}
+
+int		ft_swapper(lnk **a, lnk **b, char *c)
+{
+	if (ft_strequ(c, "sa"))
+		ft_sa(a);
+	else if (!a || !b || !c)
+		return (0);
+	return (1);
 }

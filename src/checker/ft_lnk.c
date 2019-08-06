@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 11:32:40 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 12:50:38 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/06 13:24:43 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,19 @@ void	ft_lnkdel(lnk **node)
 	*node = b;
 }
 
-void	ft_lnkdell(lnk **node
+void	ft_lnkdell(lnk **node)
+{
+	lnk		*a;
+	lnk		*b;
+	
+	a = *node;
+	b = *node;
+	while (a->next != NULL)
+		a = a->next;
+	while (b->next->next != NULL)
+		b = b->next;
+	free(a->num);
+	free(a);
+	a = NULL;
+	b->next = NULL;
+}
