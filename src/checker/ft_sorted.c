@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 10:55:35 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 11:02:18 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 12:59:37 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ int		ft_sorted(lnk *a, lnk *b)
 	int		y;
 
 	k = a;
-	if (b != NULL)
+	if (b)
+	{
+		ft_putendl("KO");
 		return (0);
+	}
 	while (k->next->next)
 	{
 		x = ft_atoi(k->num);

@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 06:34:32 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 10:51:55 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 13:14:07 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_push_swap(char **av)
 {
 	if (!av)
 		return (0);
-	ft_putendl_fd("sa\npb\npb", 1);
+	ft_putendl_fd("pb\npb\nsa\npa\npa\nsa", 1);
 	return (1);
 
 

@@ -6,13 +6,13 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 12:02:06 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 07:44:02 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 13:04:46 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-void	ft_printer(lnk *a, lnk *b, char *moves)
+void	ft_printer(lnk *a, lnk *b)
 {/*
 	int	i;
 
@@ -30,16 +30,18 @@ void	ft_printer(lnk *a, lnk *b, char *moves)
 	ft_putendl(moves);
 	ft_putendl("");
 */
-	if (moves != NULL)
-		return ;
+	lnk		*x;
+	lnk		*y;
+
+	x = a;
+	y = b;
 	while (a)
 	{
 		ft_putstr(a->num);
 		ft_putstr(" ");
 		a = a->next;
 	}
-	ft_putstr("a ");
-	ft_putendl(moves);
+	ft_putendl("a ");
 	while (b)
 	{
 		ft_putstr(b->num);
@@ -47,6 +49,6 @@ void	ft_printer(lnk *a, lnk *b, char *moves)
 		b = b->next;
 	}
 	ft_putendl("b");
-	
+	ft_sorted(x, y);
 	ft_putendl("");
 }
