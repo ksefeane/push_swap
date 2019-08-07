@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 12:29:13 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 14:14:13 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/07/24 12:46:09 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/06 13:30:05 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(char **av, char *i)
+int		main(int ac, char **av)
 {
-	lnk	*a;
-	lnk	*b;
-	char	**moves;
+	char	*w;
+	int	fd;
 
-	a = ft_builder(av);
-	b = NULL;
-	moves = ft_strsplit(i, ' ');
-	ft_instructor(a, b, moves);
-	return (1);
+	if (ac > 1)
+	{
+		fd = 1;
+		get_next_line(fd, &w);
+		ft_checker(av + 1, w);
+	}
+	else
+		ft_putchar('\n');
+	return (0);
 }

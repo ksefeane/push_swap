@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_builder.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 12:29:13 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 14:14:13 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/06 12:20:22 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/06 12:34:16 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(char **av, char *i)
+lnk	*ft_builder(char **s)
 {
-	lnk	*a;
-	lnk	*b;
-	char	**moves;
+	lnk	*k;
+	int		i;
+	int		n;
 
-	a = ft_builder(av);
-	b = NULL;
-	moves = ft_strsplit(i, ' ');
-	ft_instructor(a, b, moves);
-	return (1);
+	if (!s)
+		return (NULL);
+	i = 0;
+	n = ft_nstr(s);
+	if (!(k = ft_lnknew(s[i++])))
+		return (NULL);
+	while (i < n)
+	{
+		ft_lnkaddl(&k, s[i]);
+		i++;
+	}
+	return (k);
 }

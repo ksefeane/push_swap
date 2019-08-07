@@ -12,26 +12,35 @@
 
 CHECK = checker
 
+PUSH = push_swap
+
 C_SRC = src/checker/*
 
-C_INC = inc/checker.h
+P_SRC = src/push_swap/*
+
+C_INC = inc/checker.h inc/push_swap.h
 
 LIB = libft/libft.a
 
 BUILD = gcc -Wall -Werror -Wextra -o
 
-all: $(CHECK)
+all: $(CHECK) $(PUSH)
 
 $(CHECK): $(LIB)
 	@$(BUILD) $(CHECK) $(C_SRC) $(LIB)
 	@echo "$(CHECK) created"
 
+$(PUSH): $(LIB)
+	@$(BUILD) $(PUSH) $(P_SRC) $(LIB)
+	@echo "$(PUSH) created"
+
 $(LIB):
 	@make -C libft
 
 clean:
-	@rm -rf $(CHECK)
+	@rm -rf $(CHECK) $(PUSH)
 	@echo "$(CHECK) deleted"
+	@echo "$(PUSH) deleted"
 
 fclean: clean
 	@make fclean -C libft
