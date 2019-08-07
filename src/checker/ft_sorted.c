@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 12:29:13 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 14:14:13 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/07 10:55:35 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/07 11:02:18 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_checker(char **av, char *i)
+int		ft_sorted(lnk *a, lnk *b)
 {
-	lnk	*a;
-	lnk	*b;
-	char	**moves;
+	lnk		*k;
+	int		x;
+	int		y;
 
-	a = ft_builder(av);
-	b = NULL;
-	moves = ft_strsplit(i, ' ');
-	ft_instructor(a, b, moves);
+	k = a;
+	if (b != NULL)
+		return (0);
+	while (k->next->next)
+	{
+		x = ft_atoi(k->num);
+		y = ft_atoi(k->next->num);
+		if (x >= y)
+		{
+			ft_putendl("KO");
+			return (0);
+		}
+		k = k->next;
+	}
+	ft_putendl("OK");
 	return (1);
 }

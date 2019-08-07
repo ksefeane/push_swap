@@ -6,13 +6,13 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 12:20:22 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 12:34:16 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 07:55:08 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-lnk	*ft_builder(char **s)
+lnk		*ft_builder(char **s)
 {
 	lnk	*k;
 	int		i;
