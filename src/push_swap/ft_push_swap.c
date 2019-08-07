@@ -6,41 +6,26 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 06:34:32 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 13:14:07 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 14:27:46 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_push_swap(char **av)
+int		ft_push_swap(char **av, int c)
 {
+	lnk		*a;
+	lnk		*b;
+	char	*w;
+
+	w = NULL;
 	if (!av)
 		return (0);
-	ft_putendl_fd("pb\npb\nsa\npa\npa\nsa", 1);
-	return (1);
-
-
-
-	/*
-	int		i;
-	char	**moves;
-	char	*w;
-	char	*h;
-
-	i = 0;
-	moves = ft_strsplit(av[0], ' ');
-	w = ft_strnew(0);;
-	h = NULL;
-	while (moves[i])
-	{
-		h = w;
-		w = ft_strjoin(w, moves[i]);
-		(h) ? free(h) : 0;
-		h = w;
-		(moves[i + 1] != NULL) ? w = ft_strjoin(w, "\n") : 0;
-		(h) ? free(h) : 0;
-		i++;
-	}
+	a = (c == 1) ? ft_builder(ft_strsplit(av[0], ' ')) :
+		ft_builder(av);
+	b = NULL;
+	ft_sort_algo(a, b, &w);
+	ft_checker(av, w, c);
 	ft_putendl(w);
-	return (1);*/
+	return (1);
 }
