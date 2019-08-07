@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 06:34:32 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 14:27:46 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 15:23:03 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int		ft_push_swap(char **av, int c)
 		ft_builder(av);
 	b = NULL;
 	ft_sort_algo(a, b, &w);
+	ft_putendl("");
 	ft_checker(av, w, c);
-	ft_putendl(w);
+	//remember to free list
 	return (1);
 }

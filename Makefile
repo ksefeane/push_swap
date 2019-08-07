@@ -6,7 +6,7 @@
 #    By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 10:30:37 by ksefeane          #+#    #+#              #
-#    Updated: 2019/07/30 11:29:23 by ksefeane         ###   ########.fr        #
+#    Updated: 2019/08/07 14:18:50 by ksefeane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PUSH = push_swap
 
 C_SRC = src/checker/*
 
-P_SRC = src/push_swap/*
+P_SRC = src/push_swap/* src/checker/ft_*
 
 C_INC = inc/checker.h inc/push_swap.h
 

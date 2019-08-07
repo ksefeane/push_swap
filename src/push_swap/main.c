@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 12:46:09 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 14:17:26 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 14:53:17 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		main(int ac, char **av)
 {
 	if (ac > 1)
 	{
-		ft_push_swap(av + 1);
+		ft_push_swap(av + 1, ac - 1);
 	}
 	else
 		ft_putchar('\n');

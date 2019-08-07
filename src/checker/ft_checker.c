@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 12:29:13 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 13:12:01 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 15:09:26 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,7 @@ int		ft_checker(char **av, char *i, int c)
 	moves = ft_strsplit(i, '\n');
 	h = moves;
 	moves = ft_strsplit(moves[0], ' ');
-	free(h);
-	ft_printer(a, b);
+	(h) ? free(h) : 0;
 	ft_instructor(&a, &b, moves);
-	
-	ft_printer(a, b);
-	ft_sorted(a, b);
 	return (1);
 }

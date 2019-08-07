@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 06:36:34 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 06:38:33 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/07 14:27:53 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "checker.h"
 
-int		ft_push_swap(char **av);
+int		ft_push_swap(char **av, int c);
+int		ft_sort_algo(lnk *a, lnk *b, char **w);
 
 #endif
