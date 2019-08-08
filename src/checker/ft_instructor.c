@@ -15,9 +15,8 @@
 int	ft_instructor(lnk **a, lnk **b, char **moves)
 {
 	int	i;
-
+	
 	i = 0;
-	ft_printer(*a, *b);
 	while (moves[i])
 	{
 		ft_swapper(a, b, moves[i]);

@@ -14,9 +14,14 @@
 
 int		main(int ac, char **av)
 {
+	char	*w;
+
+	w = NULL;
 	if (ac > 1)
 	{
-		ft_push_swap(av + 1, ac - 1);
+		ft_push_swap(av + 1, ac - 1, &w);
+		ft_putstr_fd(w, 1);
+		free(w);
 	}
 	else
 		ft_putchar('\n');

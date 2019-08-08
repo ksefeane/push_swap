@@ -26,6 +26,7 @@ void	ft_lnkadd(lnk **node, char *s);
 void	ft_lnkaddl(lnk **node, char *s);
 void	ft_lnkdel(lnk **node);
 void	ft_lnkdell(lnk **node);
+void	ft_lnkxdel(lnk **node);
 
 lnk		*ft_builder(char **s);
 void	ft_printer(lnk *a, lnk *b);

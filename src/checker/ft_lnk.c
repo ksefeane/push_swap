@@ -88,3 +88,23 @@ void	ft_lnkdell(lnk **node)
 	a = NULL;
 	b->next = NULL;
 }
+
+void	ft_lnkxdel(lnk **node)
+{
+	lnk		*a;
+	lnk		*b;
+
+	a = *node;
+	b = a;
+	if (!a)
+		return ;
+	while (a)
+	{
+		b = b->next;
+		a->next = NULL;
+		free(a->num);
+		free(a);
+		a = b;
+	}
+	*node = a;
+}

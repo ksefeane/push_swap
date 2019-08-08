@@ -14,26 +14,24 @@
 
 int		ft_sorted(lnk *a, lnk *b)
 {
-	lnk		*k;
 	int		x;
 	int		y;
 
-	k = a;
 	if (b)
 	{
 		ft_putendl("KO");
 		return (0);
 	}
-	while (k->next->next)
+	while (a->next->next)
 	{
-		x = ft_atoi(k->num);
-		y = ft_atoi(k->next->num);
-		if (x >= y)
+		x = ft_atoi(a->num);
+		y = ft_atoi(a->next->num);
+		if (x > y)
 		{
 			ft_putendl("KO");
 			return (0);
 		}
-		k = k->next;
+		a = a->next;
 	}
 	ft_putendl("OK");
 	return (1);

@@ -14,25 +14,15 @@
 
 int		ft_scanner(int fd, char **w)
 {
-	char	*h;
-	char	*cache;
 	char	*read;
+	int	i;
 
-	h = NULL;
-	read = NULL;
-	cache = ft_strnew(0);
-	while (get_next_line(fd, &read) != 0)
-	{
-		h = cache;
-		cache = ft_strjoin(cache, read);
-		free(h);
-		h = cache;
-		cache = ft_strjoin(cache, " ");
-		free(h);
-		free(read);
-	}
-	*w = ft_strdup(cache);
-	free(cache);
+	i = 2;
+	ft_putnbr(i);
+	i = get_next_line(fd, &read);
+	ft_putnbr(i);
+	*w = NULL;
+	ft_putendl("1");
 	return (1);
 }
 
@@ -46,7 +36,8 @@ int		main(int ac, char **av)
 	{
 		fd = 0;
 		ft_scanner(fd, &w);
-		ft_checker(av + 1, w, ac - 1);
+		ft_putendl("1");
+		ft_checker(av + 1, w, 1);
 		free(w);
 	}
 	else

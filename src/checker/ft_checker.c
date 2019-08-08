@@ -27,5 +27,6 @@ int		ft_checker(char **av, char *i, int c)
 	moves = ft_strsplit(moves[0], ' ');
 	(h) ? free(h) : 0;
 	ft_instructor(&a, &b, moves);
+	ft_lnkxdel(&a);
 	return (1);
 }

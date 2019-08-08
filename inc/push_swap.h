@@ -15,7 +15,12 @@
 
 # include "checker.h"
 
-int		ft_push_swap(char **av, int c);
-int		ft_sort_algo(lnk *a, lnk *b, char **w);
+int		ft_push_swap(char **av, int c, char **w);
+int		ft_sort_algo(lnk *a, lnk *b, char ***moves);
 
+int		ft_lnklen(lnk *a);
+int		ft_juggler(lnk *a, char **w);
+int		ft_sorted_q(lnk *a, lnk *b);
+
+char		*ft_strglue(char **s);
 #endif

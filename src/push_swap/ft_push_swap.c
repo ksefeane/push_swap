@@ -12,21 +12,19 @@
 
 #include "../../inc/push_swap.h"
 
-int		ft_push_swap(char **av, int c)
+int		ft_push_swap(char **av, int c, char **w)
 {
 	lnk		*a;
 	lnk		*b;
-	char	*w;
+	char		**moves;
 
-	w = NULL;
 	if (!av)
 		return (0);
 	a = (c == 1) ? ft_builder(ft_strsplit(av[0], ' ')) :
 		ft_builder(av);
 	b = NULL;
-	ft_sort_algo(a, b, &w);
-	ft_putendl("");
-	ft_checker(av, w, c);
-	//remember to free list
+	ft_sort_algo(a, b, &moves);
+	*w = ft_strglue(moves);
+	ft_lnkxdel(&a);
 	return (1);
 }
