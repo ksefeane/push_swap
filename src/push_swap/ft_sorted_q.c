@@ -8,7 +8,7 @@ int		ft_sorted_q(lnk *a, lnk *b)
 
 	if (b)
 		return (0);
-	while (a->next->next)
+	while (a->next)
 	{
 		x = ft_atoi(a->num);
 		y = ft_atoi(a->next->num);

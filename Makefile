@@ -14,7 +14,7 @@ CHECK = checker
 
 PUSH = push_swap
 
-C_SRC = src/checker/*
+C_SRC = src/checker/*.c src/push_swap/ft_*
 
 P_SRC = src/push_swap/* src/checker/ft_*
 

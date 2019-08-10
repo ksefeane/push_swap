@@ -28,7 +28,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 	  ft_lstmap.c \
 	  ft_isval.c ft_nwords.c ft_nalpha.c ft_space.c \
-	  get_next_line.c ft_reader.c\
+	  get_next_line.c ft_reader.c ft_scanner.c t.c \
 
 OBJ = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 	  ft_memchr.o ft_memcmp.o ft_strlen.o ft_strdup.o ft_strcpy.o \
@@ -44,7 +44,7 @@ OBJ = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 	  ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o \
 	  ft_lstmap.o \
 	  ft_isval.o ft_nwords.o ft_nalpha.o ft_space.o \
-	  get_next_line.o ft_reader.o \
+	  get_next_line.o ft_reader.o ft_scanner.o t.o
 
 all: $(NAME)
 

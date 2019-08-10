@@ -11,20 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
-
-int		ft_scanner(int fd, char **w)
-{
-	char	*read;
-	int	i;
-
-	i = 2;
-	ft_putnbr(i);
-	i = get_next_line(fd, &read);
-	ft_putnbr(i);
-	*w = NULL;
-	ft_putendl("1");
-	return (1);
-}
+#include <fcntl.h>
 
 int		main(int ac, char **av)
 {
@@ -34,13 +21,11 @@ int		main(int ac, char **av)
 	w = NULL;
 	if (ac > 1)
 	{
-		fd = 0;
+		fd = 0;	
 		ft_scanner(fd, &w);
-		ft_putendl("1");
-		ft_checker(av + 1, w, 1);
-		free(w);
+		ft_checker(av + 1, w, ac - 1);
 	}
 	else
-		ft_putchar('\n');
+		ft_putendl("");
 	return (0);
 }

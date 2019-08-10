@@ -92,4 +92,6 @@ int					*ft_nalpha(char const *s, char c);
 int					ft_space(const char *s, int n);
 
 int					ft_reader(const int fd, int n);
+int					ft_scanner(const int fd, char **w);
+void					t(int n);
 #endif

@@ -16,16 +16,13 @@ lnk		*ft_lnknew(char *s)
 {
 	lnk		*k;
 
+	k = NULL;
 	if (!(k = (lnk *)malloc(sizeof(lnk))))
 		return (NULL);
 	if (s)
 	{
-		if (!(k->num = (char *)malloc(sizeof(char))))
-		{
-			free(k);
-			return (NULL);
-		}
-		ft_strcpy(k->num, s);
+
+		k->num = ft_strdup(s);
 	}
 	else
 		k->num = NULL;
@@ -46,14 +43,15 @@ void	ft_lnkadd(lnk **node, char *s)
 
 void	ft_lnkaddl(lnk **node, char *s)
 {
-	lnk		*b;
 	lnk		*a;
+	lnk		*b;
 
 	if (!node || !s)
 		return ;
 	a = *node;
-	b = ft_lnknew(s);
-	while (a->next != NULL)
+	if (!(b = ft_lnknew(s)))
+		return ;
+	while (a->next)
 		a = a->next;
 	a->next = b;
 }

@@ -22,7 +22,7 @@ int		ft_sorted(lnk *a, lnk *b)
 		ft_putendl("KO");
 		return (0);
 	}
-	while (a->next->next)
+	while (a->next)
 	{
 		x = ft_atoi(a->num);
 		y = ft_atoi(a->next->num);
