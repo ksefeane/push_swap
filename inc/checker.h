@@ -31,6 +31,7 @@ void	ft_lnkxdel(lnk **node);
 lnk		*ft_builder(char **s);
 void	ft_printer(lnk *a, lnk *b);
 int		ft_instructor(lnk **a, lnk **b, char **moves);
+int		ft_sorted_q(lnk *a, lnk *b);
 int		ft_sorted(lnk *a, lnk *b);
 
 int		ft_checker(char	**av, char *i, int c);
