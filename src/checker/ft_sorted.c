@@ -14,25 +14,14 @@
 
 int		ft_sorted(lnk *a, lnk *b)
 {
-	int		x;
-	int		y;
-
-	if (b)
+	if (ft_sorted_q(a, b))
+	{
+		ft_putendl("OK");
+		return (1);
+	}
+	else
 	{
 		ft_putendl("KO");
 		return (0);
 	}
-	while (a->next)
-	{
-		x = ft_atoi(a->num);
-		y = ft_atoi(a->next->num);
-		if (x > y)
-		{
-			ft_putendl("KO");
-			return (0);
-		}
-		a = a->next;
-	}
-	ft_putendl("OK");
-	return (1);
 }
