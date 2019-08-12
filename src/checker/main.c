@@ -19,7 +19,7 @@ int		main(int ac, char **av)
 	int	fd;
 
 	w = NULL;
-	if (ac > 1)
+	if (ac > 2 && ft_alldigit(ac - 1, av + 1))
 	{
 		fd = 0;	
 		ft_scanner(fd, &w);

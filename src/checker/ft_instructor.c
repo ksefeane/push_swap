@@ -17,11 +17,14 @@ int	ft_instructor(lnk **a, lnk **b, char **moves)
 	int	i;
 	
 	i = 0;
+	if (!moves)
+		return (0);
 	while (moves[i])
 	{
 		ft_swapper(a, b, moves[i]);
+		ft_putendl(moves[i]);
 		ft_printer(*a, *b);
 		i++;
 	}
-	return (1);
+	return (ft_sorted_q(*a, *b));
 }

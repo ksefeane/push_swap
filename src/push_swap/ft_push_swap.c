@@ -24,6 +24,8 @@ int		ft_push_swap(char **av, int c, char **w)
 		ft_builder(av);
 	b = NULL;
 	ft_sort_algo(a, b, &moves);
+	if (ft_sorted_q(a, b))
+		return (ft_sorted(a, b));
 	*w = ft_strglue(moves);
 	ft_lnkxdel(&a);
 	return (1);

@@ -6,6 +6,8 @@ int	ft_juggler(lnk *a, char **w)
 	int	i;
 	lnk	*b;
 
+	if (!w)
+		return (0);
 	i = 0;
 	b = NULL;
 	if (!a)
