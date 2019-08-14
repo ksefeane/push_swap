@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 14:28:43 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 15:24:20 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/14 11:18:46 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,17 @@ static int	ft_four(lnk **p, lnk **q, char ***w)
 			else
 			{
 				if (c > d)
-					h = (d ft_strdup("ra ");
-				else
+				{
 					h = (d < a) ?
 						ft_strdup("ra ") :
+						ft_strdup("ra ");
+				}
+				else
+				{
+					h = (d < a) ?
+						ft_strdup("rra ") : //
 						ft_strdup("rra ");
+				}
 			}
 		}
 		else
@@ -103,15 +109,14 @@ static int	ft_four(lnk **p, lnk **q, char ***w)
 				}
 				else
 					h = (d < a) ?
-						ft_strdup("rra ") :
-						ft_strdup("sa ");
+						ft_strdup("sa ") :
+						ft_strdup("ra ");
 			}
 		}
 		mem = ft_strsplit(h, ' ');
 		cache = ft_strjoin(cache, h);
 		*w = ft_strsplit(cache, ' ');
 		ft_instructor(p, q, mem);
-		sleep(1);
 	}
 	return (ft_juggler(*p, *w));
 }
