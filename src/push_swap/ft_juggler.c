@@ -1,7 +1,7 @@
 
 #include "../../inc/push_swap.h"
 
-int	ft_juggler(lnk *a, char **w)
+int		ft_juggler(lnk *a, char **w)
 {
 	int	i;
 	lnk	*b;

@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 14:28:43 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/14 11:18:46 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/14 12:20:55 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,25 +115,16 @@ static int	ft_four(lnk **p, lnk **q, char ***w)
 		}
 		mem = ft_strsplit(h, ' ');
 		cache = ft_strjoin(cache, h);
-		*w = ft_strsplit(cache, ' ');
 		ft_instructor(p, q, mem);
 	}
+	(cache) ? *w = ft_strsplit(cache, ' ') : t(1);
 	return (ft_juggler(*p, *w));
 }
 
 int		ft_sort_algo(lnk *a, lnk *b, char ***moves)
 {
 	int		n;
-	/*
-	lnk		*x;
-	lnk		*y;
-	lnk		*z;
-
-	x = a;
-	y = a->next;
-	z = y;
-	while (z->next->next)
-		z = z->next;*/
+	
 	n = ft_lnklen(a);
 	if (n < 3)
 		return (ft_two(&a, moves));
