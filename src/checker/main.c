@@ -6,12 +6,11 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 12:46:09 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 11:03:24 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/14 15:06:20 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
-#include <fcntl.h>
 
 int		main(int ac, char **av)
 {
@@ -19,13 +18,14 @@ int		main(int ac, char **av)
 	int	fd;
 
 	w = NULL;
-	if (ac > 2 && ft_alldigit(ac - 1, av + 1))
+	if (ac > 1)
 	{
 		fd = 0;	
 		ft_scanner(fd, &w);
+		ft_putendl(w);
 		ft_checker(av + 1, w, ac - 1);
 	}
 	else
-		ft_putendl("");
+		ft_putchar('\n');
 	return (0);
 }

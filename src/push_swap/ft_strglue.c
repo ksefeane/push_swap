@@ -7,6 +7,8 @@ char	*ft_strglue(char **s)
 	char	*h;
 	int	i;
 
+	if (!s)
+		return (NULL);
 	w = ft_strnew(0);
 	h = NULL;
 	i = 0;

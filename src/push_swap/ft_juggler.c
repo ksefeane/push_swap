@@ -6,10 +6,12 @@ int		ft_juggler(lnk *a, char **w)
 	int	i;
 	lnk	*b;
 
-	if (!w)
-		return (0);
 	i = 0;
 	b = NULL;
+	if (!w)
+		return (0);
+	if (ft_sorted_q(a, b))
+		return (1);
 	if (!a)
 		return (0);
 	while (w[i])
