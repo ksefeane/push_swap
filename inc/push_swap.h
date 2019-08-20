@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 06:36:34 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/20 16:29:33 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/20 17:06:18 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_sort_algo(lnk *a, lnk *b, char ***moves);
 int		ft_perm2(int *a, char **h);
 int		ft_perm3(int *a, char **h);
 int		ft_perm4(int *a, char **h);
-int		ft_perm5(lnk **a, char **h);
+int		ft_perm5(lnk *a, char **h);
 
 int		ft_two(lnk **p, char ***w);
 int		ft_three(lnk **p, char ***w);

@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/20 16:31:43 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/20 17:27:08 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_perm3(int *a, char **h)
             *h = ft_strdup("sa");
     }
     else
-        *h = (a[0] > a[2]) ? ft_strdup("rra") : ft_strdup("rra sa");
+        *h = (a[0] > a[2]) ? ft_strdup("rra ") : ft_strdup("rra sa");
 	return (1);
 }
 
@@ -61,21 +61,26 @@ int		ft_perm4(int *a, char **h)
 	return (1);
 }
 
-int		ft_perm5(lnk **a, char **h)
+int		ft_perm5(lnk *a, char **h)
 {
 	int		i;
 
-	if (ft_lnklen(*a) > 3)
+	if (ft_lnklen(a) > 3)
 	{
-		i = ft_findlow(*a);
+		i = ft_findlow(a);
 		if (i == 1)
+		{
 			*h = ft_strdup("pb ");
+		}
 		else
+		{
 			*h = (i < 4) ? ft_strdup("ra ") : ft_strdup("rra ");
+		}
 	}
+	else if (!ft_sorted_q(a, NULL))
+		ft_perm3(ft_holnum(a), h);
 	else
-	{
-		(ft_perm3(ft_holnum(*a), h)) ? ft_strdup("pa pa") : 0;
-	}
+		*h = ft_strdup("pa pa");
+	sleep(1);
 	return (1);
 }

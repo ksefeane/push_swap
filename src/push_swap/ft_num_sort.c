@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 12:08:40 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/20 16:34:59 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/20 17:28:33 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,14 @@ int		ft_three(lnk **p, char	***w)
 {
 	int		*a;
 	char	*h;
+	lnk		*b;
 
+	b = NULL;
 	a = ft_holnum(*p);
 	ft_perm3(a, &h);
 	*w = ft_strsplit(h, ' ');
-	ft_instructor(p, NULL, *w);
+	ft_instructor(p, &b, *w);
+	ft_putendl(h);
 	free(a);
 	free(h);
 	return (ft_sorted_q(*p, NULL));
@@ -75,7 +78,9 @@ int		ft_five(lnk **p, lnk **q, char ***w)
 	cache = ft_strnew(0);
 	while (!ft_sorted_q(*p, *q))
 	{
-		ft_perm5(p, &h);
+		ft_printer(*p, *q);
+		ft_perm5(*p, &h);
+		ft_putendl(h);
 		cache = ft_strjoin(cache, h);
 		*w = ft_strsplit(h, ' ');
 		ft_instructor(p, q, *w);
