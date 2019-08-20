@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_algo.c                                     :+:      :+:    :+:   */
+/*   ft_find_low.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 14:28:43 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/19 14:22:57 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/19 12:13:23 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/19 12:35:55 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_sort_algo(lnk *a, lnk *b, char ***moves)
+int		*ft_holnum(lnk *a)
 {
-	int		n;
-	
-	n = ft_lnklen(a);
-	if (n < 3)
-		return (ft_two(&a, moves));
-	else if (n < 4)
-		return (ft_three(&a, moves));
-	else if (n < 5)
-		return (ft_four(&a, &b, moves));
-	else if (n < 6)
-		return (ft_five(&a, &b, moves));
-	return (ft_sorted(a, b));
+	int		*nums;
+	int		i;
+	lnk		*k;
+
+	if (!a)
+		return (NULL);
+	k = a;
+	i = ft_lnklen(a);
+	nums = (int *)malloc(sizeof(int) * i);
+	i = 0;
+	while (k)
+	{
+		nums[i++] = ft_atoi(k->num);
+		k = k->next;
+	}
+	return (nums);
 }

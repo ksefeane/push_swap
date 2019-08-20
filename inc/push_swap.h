@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 06:36:34 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/15 12:27:37 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/19 15:37:55 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,18 @@
 
 int		ft_push_swap(char **av, int c, char **w);
 int		ft_sort_algo(lnk *a, lnk *b, char ***moves);
-int		ft_permcmp(int a, int b, int c, int d, char **h);
+
+int		ft_perm2(int *a, char **h);
+int		ft_perm3(int *a, char **h);
+int		ft_perm4(int *a, char **h);
+int		ft_perm5(int *a, int *b, char **h);
+
+int		ft_two(lnk **p, char ***w);
+int		ft_three(lnk **p, char ***w);
+int		ft_four(lnk **p, lnk **q, char ***w);
+int		ft_five(lnk **p, lnk **q, char ***w);
+
+int		*ft_holnum(lnk *a);
 
 int		ft_lnklen(lnk *a);
 int		ft_juggler(lnk *a, char **w);

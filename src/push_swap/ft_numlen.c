@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_algo.c                                     :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 14:28:43 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/19 14:22:57 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/19 15:48:55 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/19 16:00:45 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../../libft/libft.h"
 
-int		ft_sort_algo(lnk *a, lnk *b, char ***moves)
+int		ft_numlen(int *a)
 {
-	int		n;
-	
-	n = ft_lnklen(a);
-	if (n < 3)
-		return (ft_two(&a, moves));
-	else if (n < 4)
-		return (ft_three(&a, moves));
-	else if (n < 5)
-		return (ft_four(&a, &b, moves));
-	else if (n < 6)
-		return (ft_five(&a, &b, moves));
-	return (ft_sorted(a, b));
+	int		i;
+
+	i = 0;
+	while (a[i])
+		i++;
+	return (i);
+}
+
+int		main(void)
+{
+	int a[6] = {1, 2, 3, 4, 5, 9};
+	int	n;
+	int	m;
+
+	n = sizeof(a)/sizeof(int);
+	m = ft_strlen("hello");
+	ft_putnbr(n);
+	ft_putchar('\n');
+	ft_putnbr(m);
+	return (0);
 }

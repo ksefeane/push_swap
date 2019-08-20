@@ -6,36 +6,56 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/15 12:42:16 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/19 15:38:55 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_permcmp(int a, int b, int c, int d, char **h)
+int		ft_perm2(int *a, char **h)
 {
-	if (a < b)
+	*h = ft_strdup("sa ");
+	return (1);
+}
+
+int		ft_perm3(int *a, char **h)
+{
+	if (a[0] > a[1])
+    {
+        if (a[0] > a[2])
+            *h = (a[1] > a[2]) ? ft_strdup("ra sa") : ft_strdup("ra");
+        else
+            *h = ft_strdup("sa");
+    }
+    else
+        *h = (a[0] > a[2]) ? ft_strdup("rra") : ft_strdup("rra sa");
+	return (1);
+}
+
+int		ft_perm4(int *a, char **h)
+{
+	if (a[0] < a[1])
 	{
-		if (b < c)
+		if (a[1] < a[2])
 			*h = ft_strdup("rra ");
 		else
-			*h = (c > d) ? ft_strdup("ra ") : ft_strdup("rra ");
+			*h = (a[2] > a[3]) ? ft_strdup("ra ") : ft_strdup("rra ");
 	}
 	else
 	{
-		if (b > c)
+		if (a[1] > a[2])
 		{
-			if (c > d)
+			if (a[2] > a[3])
 				*h = ft_strdup("sa ");
 			else
-				*h = (d < a) ? ft_strdup("sa ") : ft_strdup("rra ");
+				*h = (a[3] < a[0]) ? ft_strdup("sa ") : ft_strdup("rra ");
 		}
 		else
 		{
-			if (c < d)
-				*h = (d > a) ? ft_strdup("sa ") : ft_strdup("ra ");
+			if (a[2] < a[3])
+				*h = (a[3] > a[0]) ? ft_strdup("sa ") : ft_strdup("ra ");
 			else
-				*h = (d < a) ? ft_strdup("sa ") : ft_strdup("ra ");
+				*h = (a[3] < a[0]) ? ft_strdup("sa ") : ft_strdup("ra ");
 		}
 	}
 	return (1);
