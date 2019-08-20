@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_low.c                                      :+:      :+:    :+:   */
+/*   ft_findlow.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/19 12:13:23 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/19 12:35:55 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/20 13:56:22 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/20 15:35:55 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		*ft_holnum(lnk *a)
+int		ft_findlow(lnk *a)
 {
-	int		*nums;
+	lnk		*x;
 	int		i;
-	lnk		*k;
+	int		j;
+	int		n;
 
-	if (!a)
-		return (NULL);
-	k = a;
-	i = ft_lnklen(a);
-	nums = (int *)malloc(sizeof(int) * i);
-	i = 0;
-	while (k)
+	x = a;
+	i = 1;
+	j = 1;
+	n = ft_atoi(x->num);
+	while (x->next)
 	{
-		nums[i++] = ft_atoi(k->num);
-		k = k->next;
+		x = x->next;
+		i++;
+		if (n > ft_atoi(x->num))
+		{
+			n = ft_atoi(x->num);
+			j = i;
+		}
 	}
-	return (nums);
+	return (j);
 }

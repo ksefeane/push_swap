@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/19 15:38:55 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/20 16:31:43 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_perm2(int *a, char **h)
 {
-	*h = ft_strdup("sa ");
+	(a[0] > a[1]) ? *h = ft_strdup("sa ") : 0;
 	return (1);
 }
 
@@ -57,6 +57,25 @@ int		ft_perm4(int *a, char **h)
 			else
 				*h = (a[3] < a[0]) ? ft_strdup("sa ") : ft_strdup("ra ");
 		}
+	}
+	return (1);
+}
+
+int		ft_perm5(lnk **a, char **h)
+{
+	int		i;
+
+	if (ft_lnklen(*a) > 3)
+	{
+		i = ft_findlow(*a);
+		if (i == 1)
+			*h = ft_strdup("pb ");
+		else
+			*h = (i < 4) ? ft_strdup("ra ") : ft_strdup("rra ");
+	}
+	else
+	{
+		(ft_perm3(ft_holnum(*a), h)) ? ft_strdup("pa pa") : 0;
 	}
 	return (1);
 }
