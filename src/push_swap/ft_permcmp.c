@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/20 17:27:08 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/21 13:26:00 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int		ft_perm2(int *a, char **h)
 int		ft_perm3(int *a, char **h)
 {
 	if (a[0] > a[1])
-    {
-        if (a[0] > a[2])
-            *h = (a[1] > a[2]) ? ft_strdup("ra sa") : ft_strdup("ra");
-        else
-            *h = ft_strdup("sa");
-    }
-    else
-        *h = (a[0] > a[2]) ? ft_strdup("rra ") : ft_strdup("rra sa");
+	{
+		if (a[0] > a[2])
+			*h = (a[1] > a[2]) ? ft_strdup("ra sa ") : ft_strdup("ra ");
+		else
+			*h = ft_strdup("sa ");
+	}
+	else
+		*h = (a[0] > a[2]) ? ft_strdup("rra ") : ft_strdup("rra sa ");
 	return (1);
 }
 
@@ -65,22 +65,22 @@ int		ft_perm5(lnk *a, char **h)
 {
 	int		i;
 
-	if (ft_lnklen(a) > 3)
+	if (ft_lnklen(a) > 3 && !ft_sorted_q(a, NULL))
 	{
 		i = ft_findlow(a);
 		if (i == 1)
-		{
 			*h = ft_strdup("pb ");
-		}
 		else
-		{
 			*h = (i < 4) ? ft_strdup("ra ") : ft_strdup("rra ");
-		}
 	}
 	else if (!ft_sorted_q(a, NULL))
 		ft_perm3(ft_holnum(a), h);
 	else
-		*h = ft_strdup("pa pa");
-	sleep(1);
+		*h = ft_strdup("pa ");
 	return (1);
+}
+
+int		ft_perm100(lnk *a, char **h)
+{
+
 }
