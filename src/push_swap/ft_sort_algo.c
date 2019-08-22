@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 14:28:43 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/21 13:12:50 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/22 11:54:46 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,5 @@ int		ft_sort_algo(lnk *a, lnk *b, char ***moves)
 		return (ft_five(&a, &b, moves));
 	else if (n == 100)
 		return (ft_hundred(&a, &b, moves));
-	else if (n == 500)
-		return (0);
 	return (ft_sorted(a, b));
 }

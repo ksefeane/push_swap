@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 12:08:40 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/21 13:25:55 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/22 12:08:49 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,27 @@ int		ft_five(lnk **p, lnk **q, char ***w)
 
 int		ft_hundred(lnk **p, lnk **q, char ***w)
 {
-	char	*cache;
+	char 	*cache;
+	char 	*h;
 	char	*f;
-	char	*h;
 
-	cache = ft_strnew(0);
-	f = NULL;
 	h = NULL;
+	f = NULL;
+	cache = ft_strnew(0);
 	while (!ft_sorted_q(*p, *q))
 	{
-
+		f = cache;
+		ft_perm100(*p, *q, &h);
+		cache = ft_strjoin(cache, h);
+		*w = ft_strsplit(h, ' ');
+		ft_instructor(p, q, *w);
+		ft_printer(*p, *q);
+		ft_putendl(h);
+		free(h);
+		free(f);
+		free(*w);
 	}
+	*w = (ft_strlen(cache) > 0) ? ft_strsplit(cache, ' ') : NULL;
+	free(cache);
+	return (1);
 }

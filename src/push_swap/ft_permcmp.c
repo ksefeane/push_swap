@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/21 13:26:00 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/22 11:31:52 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,4 @@ int		ft_perm5(lnk *a, char **h)
 	else
 		*h = ft_strdup("pa ");
 	return (1);
-}
-
-int		ft_perm100(lnk *a, char **h)
-{
-
 }
