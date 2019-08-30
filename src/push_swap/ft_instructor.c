@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_juggler.c                                       :+:      :+:    :+:   */
+/*   ft_instructor.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/21 13:00:46 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/21 13:00:51 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/29 13:36:54 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/30 11:42:55 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_juggler(lnk *a, char **w)
+int		ft_instructor(lnk **a, lnk **b, char *moves)
 {
-	int	i;
-	lnk	*b;
+	int		i;
+	char	**temp;
 
 	i = 0;
-	b = NULL;
-	if (!w)
+	if (!moves)
 		return (0);
-	if (ft_sorted_q(a, b))
-		return (1);
-	if (!a)
-		return (0);
-	while (w[i])
+	temp = ft_strsplit(moves, 10);
+	while (temp[i])
 	{
-		ft_swapper(&a, &b, w[i]);
+		ft_swapper(a, b, temp[i]);
 		i++;
 	}
-	return (ft_sorted_q(a, b));
+	ft_strxdel(&temp);
+	return (ft_sorted_q(*a, *b));
 }

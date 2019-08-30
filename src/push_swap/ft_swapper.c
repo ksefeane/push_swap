@@ -6,11 +6,11 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 13:27:11 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 11:58:38 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/29 15:43:44 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/checker.h"
+#include "../../inc/push_swap.h"
 
 static int	ft_sa(lnk **node)
 {
@@ -84,17 +84,12 @@ static int	ft_rra(lnk **node)
 	return (1);
 }
 
-int		ft_swapper(lnk **a, lnk **b, char *c)
+int			ft_swapper(lnk **a, lnk **b, char *c)
 {
 	if (ft_strequ(c, "sa"))
-		return ((ft_sa(a)) ? 1 : 0);
+		return (ft_sa(a));
 	else if (ft_strequ(c, "sb"))
 		return ((ft_sa(b)) ? 1 : 0);
-	else if (ft_strequ(c, "ss"))
-	{
-		ft_sa(a);
-		return ((ft_sa(b)) ? 1 : 0);
-	}
 	else if (ft_strequ(c, "pa"))
 		return ((ft_pa(a, b)) ? 1 : 0);
 	else if (ft_strequ(c, "pb"))
@@ -103,19 +98,9 @@ int		ft_swapper(lnk **a, lnk **b, char *c)
 		return ((ft_ra(a)) ? 1 : 0);
 	else if (ft_strequ(c, "rb"))
 		return ((ft_ra(b)) ? 1 : 0);
-	else if (ft_strequ(c, "rr"))
-	{
-		ft_ra(a);
-		return ((ft_ra(b)) ? 1 : 0);
-	}
 	else if (ft_strequ(c, "rra"))
 		return ((ft_rra(a)) ? 1 : 0);
 	else if (ft_strequ(c, "rrb"))
 		return ((ft_rra(b)) ? 1 : 0);
-	else if (ft_strequ(c, "rrr"))
-	{
-		ft_rra(a);
-		return ((ft_rra(b)) ? 1 : 0);
-	}
 	return (0);
 }

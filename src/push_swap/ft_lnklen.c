@@ -6,13 +6,13 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 13:00:18 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/21 13:00:37 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/29 14:47:57 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int	ft_lnklen(lnk *a)
+int		ft_lnklen(lnk *a)
 {
 	int	n;
 	lnk	*x;

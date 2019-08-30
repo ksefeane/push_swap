@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_alldigit.c                                      :+:      :+:    :+:   */
+/*   ft_printer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/24 12:45:37 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/26 11:29:14 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/06 12:02:06 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/29 11:01:55 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/checker.h"
+#include "../../inc/push_swap.h"
 
-int		ft_alldigit(int ni, char **av)
+void	ft_printer(lnk *a, lnk *b)
 {
-	int		i;
-	int		j;
+	lnk		*x;
+	lnk		*y;
 
-	i = 0;
-	j = 0;
-	while (i < ni)
+	x = a;
+	y = b;
+	while (a)
 	{
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))
-				return (0);
-			j++;
-		}
-		j = 0;
-		i++;
+		ft_putstr(a->num);
+		ft_putstr(" ");
+		a = a->next;
 	}
-	return (1);
+	ft_putendl("a ");
+	while (b)
+	{
+		ft_putstr(b->num);
+		ft_putstr(" ");
+		b = b->next;
+	}
+	ft_putendl("b");
+//	ft_sorted(x, y);
+	ft_putendl("");
 }

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nstr.c                                          :+:      :+:    :+:   */
+/*   ft_juggler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/03 13:51:50 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/03 14:10:24 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/30 12:22:30 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/30 12:32:33 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
 
-int		ft_nstr(char **s)
+int		ft_juggler(lnk *a, char *moves)
 {
 	int		i;
+	lnk		*b;
 
 	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	b = NULL;
+	if (ft_sorted_q(a, b) || !moves)
+		return (ft_sorted(a, b));
+	ft_instructor(&a, &b, moves);
+	return (ft_sorted(a, b));
 }

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_instructor.c                                    :+:      :+:    :+:   */
+/*   ft_builder.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 06:34:48 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/21 12:02:10 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/06 12:20:22 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/29 10:51:09 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/checker.h"
+#include "../../inc/push_swap.h"
 
-int	ft_instructor(lnk **a, lnk **b, char **moves)
+lnk		*ft_builder(char **s)
 {
-	int	i;
-	
+	lnk	*k;
+	int		i;
+	int		n;
+
+	if (!s)
+		return (NULL);
 	i = 0;
-	if (!moves)
-		return (0);
-	while (moves[i])
+	n = ft_nstr(s);
+	if (!(k = ft_lnknew(s[i++])))
+		return (NULL);
+	while (i < n)
 	{
-		ft_swapper(a, b, moves[i]);
+		ft_lnkaddl(&k, s[i]);
 		i++;
 	}
-	return (ft_sorted_q(*a, *b));
+	return (k);
 }

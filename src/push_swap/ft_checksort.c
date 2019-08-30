@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_builder.c                                       :+:      :+:    :+:   */
+/*   ft_sorted_q.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 12:20:22 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 07:55:08 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/29 14:43:21 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/29 15:23:42 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/checker.h"
+#include "../../inc/push_swap.h"
 
-lnk		*ft_builder(char **s)
+int		ft_sorted_q(lnk *a, lnk *b)
 {
-	lnk	*k;
-	int		i;
-	int		n;
+	int	x;
+	int	y;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	n = ft_nstr(s);
-	if (!(k = ft_lnknew(s[i++])))
-		return (NULL);
-	while (i < n)
+	if (b)
+		return (0);
+	while (a->next)
 	{
-		ft_lnkaddl(&k, s[i]);
-		i++;
+		x = ft_atoi(a->num);
+		y = ft_atoi(a->next->num);
+		if (x > y)
+			return (0);
+		a = a->next;
 	}
-	return (k);
+	return (1);
+}
+
+int		ft_sorted(lnk *a, lnk *b)
+{
+	if (ft_sorted_q(a, b))
+	{
+		ft_putendl("OK");
+		return (1);
+	}
+	else
+	{
+		ft_putendl("KO");
+		return (0);
+	}
 }

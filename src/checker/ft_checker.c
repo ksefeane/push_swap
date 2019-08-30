@@ -5,29 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 12:29:13 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/14 14:53:48 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/30 12:15:26 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/30 12:45:16 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/checker.h"
-#include "../../inc/push_swap.h"
 
-int		ft_checker(char **av, char *i, int c)
+int		ft_checker(char **av, char *moves, int c)
 {
 	lnk		*a;
 	lnk		*b;
-	char	**moves;
+	char	**temp;
+	int		i;
 
-	a = (c == 1) ?
-		ft_builder(ft_strsplit(av[0], ' ')) :
-		ft_builder(av);
+	if (c == 1)
+	{
+		temp = ft_strsplit(av[0], ' ');
+		a = ft_builder(temp);
+		ft_strxdel(&temp);
+	}
+	else
+		a = ft_builder(av);
 	b = NULL;
-	if (ft_sorted_q(a, b))
-		return (ft_sorted(a, b));
-	moves = ft_strsplit(i, 10);
 	ft_instructor(&a, &b, moves);
-	ft_sorted(a, b);
+	i = ft_sorted(a, b);
 	ft_lnkxdel(&a);
-	return (1);
+	return (i);
 }

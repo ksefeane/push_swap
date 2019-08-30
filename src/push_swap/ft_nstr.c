@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sorted.c                                        :+:      :+:    :+:   */
+/*   ft_nstr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 10:55:35 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 12:59:37 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/03 13:51:50 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/29 10:52:23 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/checker.h"
+#include "../../inc/push_swap.h"
 
-int		ft_sorted(lnk *a, lnk *b)
+int		ft_nstr(char **s)
 {
-	if (ft_sorted_q(a, b))
-	{
-		ft_putendl("OK");
-		return (1);
-	}
-	else
-	{
-		ft_putendl("KO");
-		return (0);
-	}
+	int		i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

@@ -1,37 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strglue.c                                       :+:      :+:    :+:   */
+/*   ft_findex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/21 13:03:05 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/21 13:03:21 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/29 15:13:27 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/29 15:19:07 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-char	*ft_strglue(char **s)
+static int		ft_cmp(int *x, int *y, int i, int c)
 {
-	char	*w;
-	char	*h;
-	int		i;
-
-	if (!s)
-		return (NULL);
-	w = ft_strnew(0);
-	h = NULL;
-	i = 0;
-	while (s[i])
+	if (c == 1)
 	{
-		h = w;
-		w = ft_strjoin(w, s[i]);
-		free(h);
-		h = w;
-		w = ft_strjoin(w, "\n");
-		free(h);
-		i++;
+		if (*x > *y)
+		{
+			*x = *y;
+			return (i);
+		}
 	}
-	return (w);
+	else if (c == 2)
+	{
+		if (*x < *y)
+		{
+			*x = *y;
+			return (i);
+		}
+	}
+	return (0);
+}
+
+int			ft_findex(lnk *a, int c)
+{
+	lnk		*x;
+	int		i;
+	int		j;
+	int		n;
+	int		m;
+
+	if (!a)
+		return (0);
+	x = a;
+	i = 1;
+	j = 1;
+	n = ft_atoi(x->num);
+	while (x->next)
+	{
+		x = x->next;
+		m = ft_atoi(x->num);
+		i++;
+		if (ft_cmp(&n, &m, i, c))
+			j = i;
+	}
+	return (j);
 }

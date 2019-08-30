@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_findlow.c                                       :+:      :+:    :+:   */
+/*   ft_strxdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/20 13:56:22 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/22 12:13:44 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/29 13:04:14 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/29 13:09:22 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_findlow(lnk *a)
+void	ft_strxdel(char ***s)
 {
-	lnk		*x;
+	char	**a;
 	int		i;
-	int		j;
-	int		n;
 
+	a = *s;
+	i = 0;
 	if (!a)
-		return (0);
-	x = a;
-	i = 1;
-	j = 1;
-	n = ft_atoi(x->num);
-	while (x->next)
+		return ;
+	while (a[i])
 	{
-		x = x->next;
+		free(a[i]);
 		i++;
-		if (n > ft_atoi(x->num))
-		{
-			n = ft_atoi(x->num);
-			j = i;
-		}
 	}
-	return (j);
+	free(a);
+	*s = NULL;
 }

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_holnum.c                                        :+:      :+:    :+:   */
+/*   ft_ltoai.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/20 13:30:17 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/20 13:30:23 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/29 13:25:04 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/29 15:15:25 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		*ft_holnum(lnk *a)
+int		*ft_ltoai(lnk *a)
 {
-	int		*nums;
-	int		i;
-	lnk		*k;
+	int		*d;
+	int		n;
 
 	if (!a)
 		return (NULL);
-	k = a;
-	i = ft_lnklen(a);
-	nums = (int *)malloc(sizeof(int) * i);
-	i = 0;
-	while (k)
+	n = ft_lnklen(a);
+	d = (int *)malloc(sizeof(int) * n);
+	n = 0;
+	while (a)
 	{
-		nums[i++] = ft_atoi(k->num);
-		k = k->next;
+		d[n++] = ft_atoi(a->num);
+		a = a->next;
 	}
-	return (nums);
+	return (d);
 }

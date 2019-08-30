@@ -5,26 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 06:34:32 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/22 11:36:24 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/08/28 13:22:59 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/08/30 12:17:17 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_push_swap(char **av, int c, char **w)
+static int	ft_sort_num(lnk **a, lnk **b, char **moves)
 {
-	lnk			*a;
-	lnk			*b;
-	char		**moves;
+	int		n;
 
-	if (!av)
+	n = ft_lnklen(*a);
+	if (n == 3)
+		return (ft_three(a, moves));
+	else if (n == 5)
+		return (ft_five(a, b, moves));
+	else if (n == 100)
 		return (0);
-	a = (c == 1) ? ft_builder(ft_strsplit(av[0], ' ')) : ft_builder(av);
+	else if (n == 500)
+		return (0);
+	else
+		return (0);
+}
+
+int			ft_push_swap(char **av, int c, char **w)
+{
+	lnk		*a;
+	lnk		*b;
+	char	**temp;
+
+	if (c == 1)
+	{
+		temp = ft_strsplit(av[0], ' ');
+		a = ft_builder(temp);
+		ft_strxdel(&temp);
+	}
+	else
+		a = ft_builder(av);
 	b = NULL;
-	moves = NULL;
-	ft_sort_algo(a, b, &moves);
-	*w = ft_strglue(moves);
+	ft_sort_num(&a, &b, w);
 	ft_lnkxdel(&a);
 	return (1);
 }

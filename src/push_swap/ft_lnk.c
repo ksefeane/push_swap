@@ -6,11 +6,11 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 11:32:40 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/06 14:06:19 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/30 10:29:09 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/checker.h"
+#include "../../inc/push_swap.h"
 
 lnk		*ft_lnknew(char *s)
 {
@@ -93,16 +93,14 @@ void	ft_lnkxdel(lnk **node)
 	lnk		*b;
 
 	a = *node;
-	b = a;
 	if (!a)
 		return ;
 	while (a)
 	{
-		b = b->next;
-		a->next = NULL;
+		b = a->next;
 		free(a->num);
 		free(a);
 		a = b;
 	}
-	*node = a;
+	*node = NULL;
 }
