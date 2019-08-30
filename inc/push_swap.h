@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:16:05 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/29 15:13:02 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/30 13:00:14 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ lnk		*ft_lnknew(char *s);
 void	ft_lnkadd(lnk **node, char *s);
 void	ft_lnkaddl(lnk **node, char *s);
 void	ft_lnkdel(lnk **node);
-void	ft_lnkdell(lnk **node);
 void	ft_lnkxdel(lnk **node);
 lnk		*ft_builder(char **s);
 

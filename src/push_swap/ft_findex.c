@@ -6,13 +6,13 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 15:13:27 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/29 15:19:07 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/30 13:02:40 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static int		ft_cmp(int *x, int *y, int i, int c)
+static int	ft_cmp(int *x, int *y, int i, int c)
 {
 	if (c == 1)
 	{

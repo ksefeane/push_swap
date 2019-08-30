@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 11:32:40 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 10:29:09 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/30 13:01:45 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ lnk		*ft_lnknew(char *s)
 	if (!(k = (lnk *)malloc(sizeof(lnk))))
 		return (NULL);
 	if (s)
-	{
-
 		k->num = ft_strdup(s);
-	}
 	else
 		k->num = NULL;
 	k->next = NULL;
@@ -62,29 +59,12 @@ void	ft_lnkdel(lnk **node)
 	lnk		*b;
 
 	a = *node;
-	b = (*node)->next;;
+	b = (*node)->next;
 	free(a->num);
 	a->next = NULL;
 	free(a);
 	a = NULL;
 	*node = b;
-}
-
-void	ft_lnkdell(lnk **node)
-{
-	lnk		*a;
-	lnk		*b;
-	
-	a = *node;
-	b = *node;
-	while (a->next != NULL)
-		a = a->next;
-	while (b->next->next != NULL)
-		b = b->next;
-	free(a->num);
-	free(a);
-	a = NULL;
-	b->next = NULL;
 }
 
 void	ft_lnkxdel(lnk **node)
