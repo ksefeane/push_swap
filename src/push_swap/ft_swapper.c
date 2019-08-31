@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 13:27:11 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/29 15:43:44 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/30 13:28:37 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static int	ft_rra(lnk **node)
 int			ft_swapper(lnk **a, lnk **b, char *c)
 {
 	if (ft_strequ(c, "sa"))
-		return (ft_sa(a));
+		return ((ft_sa(a)) ? 1 : 0);
 	else if (ft_strequ(c, "sb"))
 		return ((ft_sa(b)) ? 1 : 0);
 	else if (ft_strequ(c, "pa"))

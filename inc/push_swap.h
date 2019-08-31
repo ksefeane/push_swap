@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:16:05 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 13:00:14 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/31 00:37:55 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_lnkadd(lnk **node, char *s);
 void	ft_lnkaddl(lnk **node, char *s);
 void	ft_lnkdel(lnk **node);
 void	ft_lnkxdel(lnk **node);
+
 lnk		*ft_builder(char **s);
 
 void	ft_strxdel(char ***s);
@@ -41,11 +42,14 @@ int		ft_nstr(char **s);
 int		*ft_ltoai(lnk *a);
 int		ft_lnklen(lnk *a);
 int		ft_findex(lnk *a, int c);
+int		ft_findfit(lnk *a, int c);
 
 int		ft_three(lnk **a, char **moves);
 int		ft_five(lnk **a, lnk **b, char **moves);
+int		ft_hunnid(lnk **a, lnk **b, char **moves);
 
 int		ft_perm3(lnk *a, char **h);
 int		ft_perm5(lnk *a, char **h);
+int		ft_perm100(lnk *a, lnk *b, char **h);
 
 #endif

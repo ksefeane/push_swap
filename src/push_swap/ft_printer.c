@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 12:02:06 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 12:53:22 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/30 14:36:13 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	ft_printer(lnk *a, lnk *b)
 {
-	lnk		*x;
-	lnk		*y;
-
-	x = a;
-	y = b;
 	while (a)
 	{
 		ft_putstr(a->num);
@@ -33,6 +28,5 @@ void	ft_printer(lnk *a, lnk *b)
 		b = b->next;
 	}
 	ft_putendl("b");
-	ft_sorted(a, b);
 	ft_putendl("");
 }

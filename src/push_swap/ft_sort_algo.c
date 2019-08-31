@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 13:20:01 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 10:33:41 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/31 00:42:34 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int		ft_five(lnk **a, lnk **b, char **moves)
 	char	*h;
 	char	*f;
 	char	*cache;
+	int		i;
 
+	i = 0;
 	h = NULL;
 	f = NULL;
 	cache = ft_strnew(0);
@@ -39,11 +41,43 @@ int		ft_five(lnk **a, lnk **b, char **moves)
 	{
 		f = cache;
 		ft_perm5(*a, &h);
-		cache = ft_strjoin(cache, h);
 		ft_instructor(a, b, h);
+		cache = ft_strjoin(cache, h);
+		free(f);
+		free(h);
+		i++;
+	}
+//	ft_putnbr(i);
+	*moves = ft_strdup(cache);
+	free(cache);
+	return (1);
+}
+
+int		ft_hunnid(lnk **a, lnk **b, char **moves)
+{
+	char	*h;
+	char	*f;
+	char	*cache;
+	int		i;
+
+	i = 0;
+	h = NULL;
+	f = NULL;
+	cache = ft_strnew(0);
+	while (!ft_sorted_q(*a, *b) && i < 10000)
+	{
+		f = cache;
+		ft_perm100(*a, *b, &h);
+		ft_instructor(a, b, h);
+		i++;
+		cache = ft_strjoin(cache, h);
 		free(f);
 		free(h);
 	}
+	ft_putendl(cache);
+	ft_sorted(*a, *b);
+	ft_putnbr(i);
+	ft_putchar('\n');
 	*moves = ft_strdup(cache);
 	free(cache);
 	return (1);
