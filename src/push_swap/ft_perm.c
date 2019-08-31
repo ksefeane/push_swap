@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/31 00:42:53 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/08/31 15:30:14 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_perm5(lnk *a, char **h)
 {
 	int		i;
 
-	i = ft_findfit(a, 3);
+	i = ft_findfit(a, 7);
 	ft_putnbr(i);
 	if (ft_lnklen(a) > 3 && !ft_sorted_q(a, NULL))
 	{
@@ -60,6 +60,6 @@ int		ft_perm100(lnk *a, lnk *b, char **h)
 
 	i = ft_findex(a, 1);
 	j = ft_findfit(b, i);
-	*h = ft_strdup("sa\n");
+	*h = ft_strdup(ft_itoa(j));
 	return (1);
 }
