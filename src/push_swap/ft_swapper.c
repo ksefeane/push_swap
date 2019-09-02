@@ -98,9 +98,19 @@ int			ft_swapper(lnk **a, lnk **b, char *c)
 		return ((ft_ra(a)) ? 1 : 0);
 	else if (ft_strequ(c, "rb"))
 		return ((ft_ra(b)) ? 1 : 0);
+	else if (ft_strequ(c, "rr"))
+	{
+		ft_ra(a);
+		return ((ft_ra(b)) ? 1 : 0);
+	}
 	else if (ft_strequ(c, "rra"))
 		return ((ft_rra(a)) ? 1 : 0);
 	else if (ft_strequ(c, "rrb"))
 		return ((ft_rra(b)) ? 1 : 0);
+	else if (ft_strequ(c, "rrr"))
+	{
+		ft_rra(a);
+		return ((ft_rra(b)) ? 1 : 0);
+	}
 	return (0);
 }

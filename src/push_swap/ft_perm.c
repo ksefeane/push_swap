@@ -59,15 +59,39 @@ int		ft_perm100(lnk *a, lnk *b, char **h)
 	int		k;
 	int		x;
 
+	x = ft_atoi(a->num);
+	n = ft_lnklen(a);
 	if (!ft_sorted_q(a, b))
 	{
-		x = ft_atoi(a->num);
 		i = ft_findex(a, 1);
 		j = ft_findex(b, 2);
 		k = ft_findfit(b, x);
-		if ((n = ft_lnklen(a) > 
+/*		ft_putnbr(i);
+		ft_putstr(" ");
+		ft_putnbr(j);
+		ft_putstr(" ");
+		ft_putnbr(k);
+*/		ft_putstr(" ");
+		if (k < 2 || (i == 1 && j < 2))
+			*h = ft_strdup("pb\n");
+		else if ((i == 1 && j > 1))
+			*h = (j < n) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
+		else if (k < i)
+			*h = (k < ft_lnklen(b) / 2 ) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
+		else if (n > 49)
+			*h = (k < ft_lnklen(b) / 2) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
+		else
+			*h = (i < ft_lnklen(a) / 2) ? ft_strdup("ra\n") : ft_strdup("rra\n");
 	}
 	else
 		*h = ft_strdup("pa\n");
+/*	ft_putnbr(ft_lnklen(b));
+	if (ft_lnklen(b) == 99)
+	{
+		ft_putendl("");
+		ft_printer(a, b);
+	}
+	ft_putstr(" ");
+*/	ft_putstr(*h);
 	return (1);
 }

@@ -63,11 +63,12 @@ int		ft_hunnid(lnk **a, lnk **b, char **moves)
 	h = NULL;
 	f = NULL;
 	cache = ft_strnew(0);
-	while (!ft_sorted_q(*a, *b) && i < 2000)
+	while (!ft_sorted_q(*a, *b) && i < 900)
 	{
 		f = cache;
 		ft_perm100(*a, *b, &h);
 		ft_instructor(a, b, h);
+		ft_printer(*a, *b);
 		cache = ft_strjoin(cache, h);
 		free(f);
 		free(h);
@@ -77,6 +78,7 @@ int		ft_hunnid(lnk **a, lnk **b, char **moves)
 	ft_sorted(*a, *b);
 	ft_putnbr(i);
 	ft_putchar('\n');
+	ft_printer(*a, *b);
 	*moves = ft_strdup(cache);
 	free(cache);
 	return (1);

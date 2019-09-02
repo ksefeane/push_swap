@@ -19,6 +19,8 @@ int		ft_sorted_q(lnk *a, lnk *b)
 
 	if (b)
 		return (0);
+	if (!a)
+		return (1);
 	while (a->next)
 	{
 		x = ft_atoi(a->num);
