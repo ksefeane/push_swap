@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/02 13:10:25 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/02 14:05:18 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,35 +54,18 @@ int		ft_perm5(lnk *a, char **h)
 int		ft_perm100(lnk *a, lnk *b, char **h)
 {
 	int		n;
-	int		m;
 	int		i;
 	int		j;
+	int		k;
 	int		x;
 
 	if (!ft_sorted_q(a, b))
 	{
 		x = ft_atoi(a->num);
 		i = ft_findex(a, 1);
-		j = ft_findfit(b, x);
-		ft_putnbr(i);
-		ft_putstr(" ");
-		ft_putnbr(j);
-		ft_putstr(" ");
-		ft_putnbr(x);
-		ft_putendl("");
-		if (j <= i)
-		{
-			m = ft_lnklen(b);
-			if (j < 2)
-				*h = ft_strdup("pb\n");
-			else
-				*h = (j < m / 2) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
-		}
-		else
-		{
-			n = ft_lnklen(a);
-			*h = (i < n / 2) ? ft_strdup("ra\n") : ft_strdup("rra\n");
-		}
+		j = ft_findex(b, 2);
+		k = ft_findfit(b, x);
+		if ((n = ft_lnklen(a) > 
 	}
 	else
 		*h = ft_strdup("pa\n");
