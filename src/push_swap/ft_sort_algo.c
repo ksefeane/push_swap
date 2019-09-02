@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 13:20:01 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/31 15:29:24 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/02 13:01:37 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int		ft_five(lnk **a, lnk **b, char **moves)
 		free(h);
 		i++;
 	}
-//	ft_putnbr(i);
 	*moves = ft_strdup(cache);
 	free(cache);
 	return (1);
@@ -64,15 +63,15 @@ int		ft_hunnid(lnk **a, lnk **b, char **moves)
 	h = NULL;
 	f = NULL;
 	cache = ft_strnew(0);
-	while (!ft_sorted_q(*a, *b) && i < 1)
+	while (!ft_sorted_q(*a, *b) && i < 2000)
 	{
 		f = cache;
 		ft_perm100(*a, *b, &h);
 		ft_instructor(a, b, h);
-		i++;
 		cache = ft_strjoin(cache, h);
 		free(f);
 		free(h);
+		i++;
 	}
 	ft_putendl(cache);
 	ft_sorted(*a, *b);

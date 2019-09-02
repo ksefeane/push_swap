@@ -6,7 +6,7 @@
 #    By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 10:30:37 by ksefeane          #+#    #+#              #
-#    Updated: 2019/08/30 11:45:11 by ksefeane         ###   ########.fr        #
+#    Updated: 2019/09/02 12:47:17 by ksefeane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ LIB = libft/libft.a
 
 BUILD = gcc -Wall -Werror -Wextra -o
 
-all: $(CHECK) $(PUSH)
+all: $(PUSH) $(CHECK)
 
 $(PUSH): $(LIB)
 	@$(BUILD) $(PUSH) $(P_SRC) $(LIB)

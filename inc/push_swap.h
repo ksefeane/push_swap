@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:16:05 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/31 00:37:55 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/02 11:25:18 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ int		ft_push_swap(char **av, int c, char **w);
 void	ft_printer(lnk *a, lnk *b);
 int		ft_instructor(lnk **a, lnk **b, char *moves);
 int		ft_swapper(lnk **a, lnk **b, char *c);
+
 int		ft_sorted_q(lnk *a, lnk *b);
+int		ft_sorted_r(lnk *a);
 int		ft_sorted(lnk *a, lnk *b);
 
 int		ft_nstr(char **s);

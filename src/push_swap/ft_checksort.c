@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 14:43:21 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/29 15:23:42 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/02 12:04:18 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_sorted_q(lnk *a, lnk *b)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 
 	if (b)
 		return (0);
@@ -24,6 +24,24 @@ int		ft_sorted_q(lnk *a, lnk *b)
 		x = ft_atoi(a->num);
 		y = ft_atoi(a->next->num);
 		if (x > y)
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}
+
+int		ft_sorted_r(lnk *a)
+{
+	int		x;
+	int		y;
+
+	if (!a)
+		return (1);
+	while (a->next)
+	{
+		x = ft_atoi(a->num);
+		y = ft_atoi(a->next->num);
+		if (x < y)
 			return (0);
 		a = a->next;
 	}
