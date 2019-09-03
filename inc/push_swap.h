@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:16:05 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/02 11:25:18 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/03 13:08:00 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ void	ft_lnkdel(lnk **node);
 void	ft_lnkxdel(lnk **node);
 
 lnk		*ft_builder(char **s);
+int		ft_alldigit(char **s);
+int		ft_customs(char **s, int c);
 
+char	**ft_strxdup(char **s);
 void	ft_strxdel(char ***s);
 
 int		ft_push_swap(char **av, int c, char **w);

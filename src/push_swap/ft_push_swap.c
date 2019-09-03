@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:22:59 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 22:30:15 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/03 11:04:25 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static int	ft_sort_num(lnk **a, lnk **b, char **moves)
 	else if (n == 5)
 		return (ft_five(a, b, moves));
 	else if (n == 100)
-		return (ft_hunnid(a, b, moves));
+		return (0);
 	else if (n == 500)
-		return (ft_hunnid(a, b, moves));
+		return (0);
 	else
 		return (0);
 }

@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strxdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/30 11:15:35 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/03 11:57:03 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/09/03 13:00:35 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/09/03 13:08:15 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/checker.h"
+#include "../../inc/push_swap.h"
 
-int		main(int ac, char **av)
+char	**ft_strxdup(char **s)
 {
-	char	*w;
-	int		fd;
+	char	**temp;
+	int		i;
+	int		j;
 
-	w = NULL;
-	if (!ft_customs(av + 1, ac - 1))
+	i = 0;
+	j = 0;
+	while (s[j])
+		j++;
+	temp = (char **)malloc(sizeof(char *) * (j + 1));
+	while (s[i])
 	{
-		ft_putendl("Error");
-		return (0);
+		temp[i] = ft_strdup(s[i]);
+		i++;
 	}
-	if (ac > 1)
-	{
-		fd = 0;
-		ft_scanner(fd, &w);
-		ft_checker(av + 1, w, ac - 1);
-		free(w);
-	}
-	else
-		ft_putchar('\n');
-	return (0);
+	temp[i] = NULL;
+	return (temp);
 }
