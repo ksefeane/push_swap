@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 15:13:27 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/02 12:59:31 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 14:00:44 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,13 @@ int			ft_findex(lnk *a, int c)
 	return (j);
 }
 
-int		ft_findfit(lnk *a, int c)
+int			ft_findfit(lnk *a, int c)
 {
 	lnk		*x;
 	int		i;
 	int		e;
 	int		f;
 
-	if (!a)
-		return (0);
 	i = 1;
 	x = a;
 	while (x->next)
@@ -84,7 +82,6 @@ int		ft_findfit(lnk *a, int c)
 		if (c > e && c < f)
 			return (i);
 		x = x->next;
-
 	}
 	return (0);
 }

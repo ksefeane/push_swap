@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_customs.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/04 13:57:21 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/09/04 14:01:48 by ksefeane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_checkdigit(char *s)
+static int		ft_checkdigit(char *s)
 {
 	int		i;
 
@@ -15,7 +26,7 @@ int		ft_checkdigit(char *s)
 	return (1);
 }
 
-int		ft_maxint(char *s)
+static int		ft_maxint(char *s)
 {
 	int		i;
 
@@ -24,11 +35,10 @@ int		ft_maxint(char *s)
 		return (1);
 	else
 		i = ft_atoi(s);
-	
 	return ((i < -2147483647) ? 0 : 1);
 }
 
-int		ft_security_checks(char **s)
+static int		ft_security_checks(char **s)
 {
 	int		i;
 	int		j;
@@ -51,7 +61,7 @@ int		ft_security_checks(char **s)
 	return (1);
 }
 
-int		ft_customs(char **s, int c)
+int				ft_customs(char **s, int c)
 {
 	char	**temp;
 	int		i;

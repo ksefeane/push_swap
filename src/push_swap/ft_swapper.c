@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 13:27:11 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 13:28:37 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 14:18:38 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,19 +98,13 @@ int			ft_swapper(lnk **a, lnk **b, char *c)
 		return ((ft_ra(a)) ? 1 : 0);
 	else if (ft_strequ(c, "rb"))
 		return ((ft_ra(b)) ? 1 : 0);
-	else if (ft_strequ(c, "rr"))
-	{
-		ft_ra(a);
-		return ((ft_ra(b)) ? 1 : 0);
-	}
 	else if (ft_strequ(c, "rra"))
 		return ((ft_rra(a)) ? 1 : 0);
 	else if (ft_strequ(c, "rrb"))
 		return ((ft_rra(b)) ? 1 : 0);
-	else if (ft_strequ(c, "rrr"))
-	{
-		ft_rra(a);
-		return ((ft_rra(b)) ? 1 : 0);
-	}
+	else if (ft_strequ(c, "ss") || ft_strequ(c, "rr") || ft_strequ(c, "rrr"))
+		return (0);
+	else
+		ft_putendl("Error");
 	return (0);
 }

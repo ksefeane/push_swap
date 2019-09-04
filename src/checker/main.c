@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 11:15:35 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/03 11:57:03 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 15:23:14 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int		main(int ac, char **av)
 	int		fd;
 
 	w = NULL;
+	if (ac == 1)
+		return (0);
 	if (!ft_customs(av + 1, ac - 1))
 	{
 		ft_putendl("Error");
@@ -27,6 +29,11 @@ int		main(int ac, char **av)
 	{
 		fd = 0;
 		ft_scanner(fd, &w);
+		if (!ft_secure(w))
+		{
+			ft_putendl("Error");
+			return (0);
+		}
 		ft_checker(av + 1, w, ac - 1);
 		free(w);
 	}

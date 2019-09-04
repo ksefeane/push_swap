@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 13:36:54 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 14:41:19 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 14:01:14 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ int		ft_instructor(lnk **a, lnk **b, char *moves)
 	while (temp[i])
 	{
 		ft_swapper(a, b, temp[i]);
-//		ft_sorted(*a, *b);
-//		ft_putendl(temp[i]);
-//		ft_printer(*a, *b);
 		i++;
 	}
 	ft_strxdel(&temp);
