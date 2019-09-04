@@ -6,16 +6,16 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 13:27:11 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 14:18:38 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:24:42 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static int	ft_sa(lnk **node)
+static int	ft_sa(t_lnk **node)
 {
-	lnk		*j;
-	lnk		*k;
+	t_lnk		*j;
+	t_lnk		*k;
 
 	j = *node;
 	if (!j)
@@ -27,10 +27,10 @@ static int	ft_sa(lnk **node)
 	return (1);
 }
 
-static int	ft_pa(lnk **node1, lnk **node2)
+static int	ft_pa(t_lnk **node1, t_lnk **node2)
 {
-	lnk		*a;
-	lnk		*b;
+	t_lnk		*a;
+	t_lnk		*b;
 
 	a = *node1;
 	b = *node2;
@@ -45,10 +45,10 @@ static int	ft_pa(lnk **node1, lnk **node2)
 	return (1);
 }
 
-static int	ft_ra(lnk **node)
+static int	ft_ra(t_lnk **node)
 {
-	lnk	*a;
-	lnk	*b;
+	t_lnk	*a;
+	t_lnk	*b;
 
 	a = *node;
 	if (!a)
@@ -62,11 +62,11 @@ static int	ft_ra(lnk **node)
 	return (1);
 }
 
-static int	ft_rra(lnk **node)
+static int	ft_rra(t_lnk **node)
 {
-	lnk	*a;
-	lnk	*b;
-	lnk	*c;
+	t_lnk	*a;
+	t_lnk	*b;
+	t_lnk	*c;
 
 	a = *node;
 	if (!a)
@@ -84,7 +84,7 @@ static int	ft_rra(lnk **node)
 	return (1);
 }
 
-int			ft_swapper(lnk **a, lnk **b, char *c)
+int			ft_swapper(t_lnk **a, t_lnk **b, char *c)
 {
 	if (ft_strequ(c, "sa"))
 		return ((ft_sa(a)) ? 1 : 0);

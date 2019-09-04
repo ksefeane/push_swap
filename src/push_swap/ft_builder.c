@@ -6,15 +6,15 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 12:20:22 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 12:52:51 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:18:52 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-lnk		*ft_builder(char **s)
+t_lnk		*ft_builder(char **s)
 {
-	lnk		*k;
+	t_lnk	*k;
 	int		i;
 	int		n;
 

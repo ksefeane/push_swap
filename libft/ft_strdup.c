@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:19:34 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/07/17 14:39:32 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:08:59 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strdup(const char *s1)
 {
 	char	*a;
 	int		i;
-	int	n;
+	int		n;
 
 	n = ft_strlen(s1);
 	if (!(a = (char *)malloc(sizeof(char) * (n + 1))))

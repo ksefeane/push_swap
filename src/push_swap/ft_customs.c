@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 13:57:21 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 14:01:48 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:19:35 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ int				ft_customs(char **s, int c)
 	i = ft_security_checks(temp);
 	if (c == 1)
 		ft_strxdel(&temp);
+	(i == 0) ? ft_putendl("Error") : 0;
 	return (i);
 }

@@ -6,13 +6,13 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 14:43:21 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/02 12:04:18 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:06:06 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_sorted_q(lnk *a, lnk *b)
+int		ft_sorted_q(t_lnk *a, t_lnk *b)
 {
 	int		x;
 	int		y;
@@ -32,7 +32,7 @@ int		ft_sorted_q(lnk *a, lnk *b)
 	return (1);
 }
 
-int		ft_sorted_r(lnk *a)
+int		ft_sorted_r(t_lnk *a)
 {
 	int		x;
 	int		y;
@@ -50,7 +50,7 @@ int		ft_sorted_r(lnk *a)
 	return (1);
 }
 
-int		ft_sorted(lnk *a, lnk *b)
+int		ft_sorted(t_lnk *a, t_lnk *b)
 {
 	if (ft_sorted_q(a, b))
 	{

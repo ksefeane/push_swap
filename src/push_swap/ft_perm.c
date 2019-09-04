@@ -6,13 +6,13 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/03 10:25:46 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:18:42 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_perm3(lnk *a, char **h)
+int		ft_perm3(t_lnk *a, char **h)
 {
 	int		*n;
 
@@ -30,7 +30,7 @@ int		ft_perm3(lnk *a, char **h)
 	return (1);
 }
 
-int		ft_perm5(lnk *a, char **h)
+int		ft_perm5(t_lnk *a, char **h)
 {
 	int		i;
 
@@ -48,5 +48,27 @@ int		ft_perm5(lnk *a, char **h)
 	}
 	else
 		*h = ft_strdup("pa\n");
+	return (1);
+}
+
+int		ft_perm100(t_lnk *a, t_lnk *b, char **h)
+{
+	int			i;
+	int			j;
+	int			n;
+//	static int	c;
+
+	i = ft_findex(a, 1);
+	j = ft_findex(b, 2);
+	n = ft_lnklen(a);
+	if (!ft_sorted_q(a, NULL))
+		*h = (i < 20) ? ft_strdup("pb\n") : ft_strdup("ra\n");
+	else
+	{
+		if (j < 2)
+			*h = ft_strdup("pa\n");
+		else
+			*h = (j < 11) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
+	}
 	return (1);
 }

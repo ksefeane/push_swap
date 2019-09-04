@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 13:25:38 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/07 08:14:01 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:08:34 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,5 @@ int					ft_space(const char *s, int n);
 
 int					ft_reader(const int fd, int n);
 int					ft_scanner(const int fd, char **w);
-void					t(int n);
+void				t(int n);
 #endif

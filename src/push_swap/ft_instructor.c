@@ -6,13 +6,13 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 13:36:54 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 14:01:14 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:06:22 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_instructor(lnk **a, lnk **b, char *moves)
+int		ft_instructor(t_lnk **a, t_lnk **b, char *moves)
 {
 	int		i;
 	char	**temp;

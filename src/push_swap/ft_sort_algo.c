@@ -6,16 +6,16 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 13:20:01 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/03 10:25:35 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:18:49 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_three(lnk **a, char **moves)
+int		ft_three(t_lnk **a, char **moves)
 {
 	char	*h;
-	lnk		*b;
+	t_lnk		*b;
 
 	h = NULL;
 	b = NULL;
@@ -26,7 +26,7 @@ int		ft_three(lnk **a, char **moves)
 	return (ft_sorted_q(*a, NULL));
 }
 
-int		ft_five(lnk **a, lnk **b, char **moves)
+int		ft_five(t_lnk **a, t_lnk **b, char **moves)
 {
 	char	*h;
 	char	*f;
@@ -47,6 +47,35 @@ int		ft_five(lnk **a, lnk **b, char **moves)
 		free(h);
 		i++;
 	}
+	*moves = ft_strdup(cache);
+	free(cache);
+	return (1);
+}
+
+int		ft_hunnid(t_lnk **a, t_lnk **b, char **moves)
+{
+	char	*h;
+	char	*f;
+	char	*cache;
+	int		i;
+
+	i = 0;
+	h = NULL;
+	f = NULL;
+	cache = ft_strnew(0);
+	while (!ft_sorted_q(*a, *b) && i < 3000)
+	{
+		f = cache;
+		ft_perm100(*a, *b, &h);
+		ft_instructor(a, b, h);
+		cache = ft_strjoin(cache, h);
+		free(f);
+		ft_putstr(h);
+		free(h);
+		i++;
+	}
+	ft_printer(*a, *b);
+	t(i);
 	*moves = ft_strdup(cache);
 	free(cache);
 	return (1);

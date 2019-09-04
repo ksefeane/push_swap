@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 15:13:27 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 14:00:44 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:22:17 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static int	ft_cmp(int *x, int *y, int i, int c)
 	return (0);
 }
 
-int			ft_findex(lnk *a, int c)
+int			ft_findex(t_lnk *a, int c)
 {
-	lnk		*x;
+	t_lnk	*x;
 	int		i;
 	int		j;
 	int		n;
@@ -58,9 +58,9 @@ int			ft_findex(lnk *a, int c)
 	return (j);
 }
 
-int			ft_findfit(lnk *a, int c)
+int			ft_findfit(t_lnk *a, int c)
 {
-	lnk		*x;
+	t_lnk	*x;
 	int		i;
 	int		e;
 	int		f;

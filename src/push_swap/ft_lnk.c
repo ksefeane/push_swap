@@ -6,18 +6,18 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 11:32:40 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/08/30 13:01:45 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:21:16 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-lnk		*ft_lnknew(char *s)
+t_lnk		*ft_lnknew(char *s)
 {
-	lnk		*k;
+	t_lnk		*k;
 
 	k = NULL;
-	if (!(k = (lnk *)malloc(sizeof(lnk))))
+	if (!(k = (t_lnk *)malloc(sizeof(t_lnk))))
 		return (NULL);
 	if (s)
 		k->num = ft_strdup(s);
@@ -27,9 +27,9 @@ lnk		*ft_lnknew(char *s)
 	return (k);
 }
 
-void	ft_lnkadd(lnk **node, char *s)
+void		ft_lnkadd(t_lnk **node, char *s)
 {
-	lnk		*a;
+	t_lnk		*a;
 
 	if (!node || !s)
 		return ;
@@ -38,10 +38,10 @@ void	ft_lnkadd(lnk **node, char *s)
 	*node = a;
 }
 
-void	ft_lnkaddl(lnk **node, char *s)
+void		ft_lnkaddl(t_lnk **node, char *s)
 {
-	lnk		*a;
-	lnk		*b;
+	t_lnk		*a;
+	t_lnk		*b;
 
 	if (!node || !s)
 		return ;
@@ -53,10 +53,10 @@ void	ft_lnkaddl(lnk **node, char *s)
 	a->next = b;
 }
 
-void	ft_lnkdel(lnk **node)
+void		ft_lnkdel(t_lnk **node)
 {
-	lnk		*a;
-	lnk		*b;
+	t_lnk		*a;
+	t_lnk		*b;
 
 	a = *node;
 	b = (*node)->next;
@@ -67,10 +67,10 @@ void	ft_lnkdel(lnk **node)
 	*node = b;
 }
 
-void	ft_lnkxdel(lnk **node)
+void		ft_lnkxdel(t_lnk **node)
 {
-	lnk		*a;
-	lnk		*b;
+	t_lnk		*a;
+	t_lnk		*b;
 
 	a = *node;
 	if (!a)

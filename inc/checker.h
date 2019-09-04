@@ -6,14 +6,14 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 11:18:58 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 15:17:55 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:01:46 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CHECKER_H
+#ifndef CHECKER_H
 # define CHECKER_H
 
-#include "push_swap.h"
+# include "push_swap.h"
 
 int		ft_checker(char **av, char *moves, int c);
 int		ft_secure(char *s);

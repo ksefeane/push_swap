@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 12:15:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 14:19:00 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:14:39 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_checker(char **av, char *moves, int c)
 {
-	lnk		*a;
-	lnk		*b;
+	t_lnk	*a;
+	t_lnk	*b;
 	char	**temp;
 	int		i;
 
