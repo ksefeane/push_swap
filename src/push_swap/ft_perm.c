@@ -55,12 +55,12 @@ int		ft_perm100(t_lnk *a, t_lnk *b, char **h)
 {
 	int			i;
 	int			j;
-	int			n;
+//	int			n;
 //	static int	c;
 
 	i = ft_findex(a, 1);
 	j = ft_findex(b, 2);
-	n = ft_lnklen(a);
+//	n = ft_lnklen(a);
 	if (!ft_sorted_q(a, NULL))
 		*h = (i < 20) ? ft_strdup("pb\n") : ft_strdup("ra\n");
 	else

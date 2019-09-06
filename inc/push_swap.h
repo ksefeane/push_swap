@@ -22,10 +22,12 @@ typedef	struct	s_t_lnk
 }				t_lnk;
 
 t_lnk			*ft_lnknew(char *s);
-void			ft_lnkadd(t_lnk **node, char *s);
-void			ft_lnkaddl(t_lnk **node, char *s);
-void			ft_lnkdel(t_lnk **node);
-void			ft_lnkxdel(t_lnk **node);
+int			ft_lnkadd(t_lnk **node, char *s);
+int			ft_lnkaddl(t_lnk **node, char *s);
+int			ft_lnkdel(t_lnk **node);
+int			ft_lnkdell(t_lnk **node);
+int			ft_lnkcdel(t_lnk **node, unsigned int c);
+int			ft_lnkxdel(t_lnk **node);
 
 t_lnk			*ft_builder(char **s);
 int				ft_alldigit(char **s);

@@ -45,6 +45,7 @@ int			ft_push_swap(char **av, int c, char **w)
 		a = ft_builder(av);
 	b = NULL;
 	ft_sort_num(&a, &b, w);
+	ft_printer(a, b);
 	ft_lnkxdel(&a);
 	return (1);
 }

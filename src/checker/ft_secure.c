@@ -35,10 +35,8 @@ char			**ft_rules(void)
 int				ft_strsearch(char **s, char *c)
 {
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	while (s[i])
 	{
 		if (ft_strequ(s[i], c))

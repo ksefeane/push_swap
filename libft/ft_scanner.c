@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h":w
+#include "libft.h"
 
 int		ft_scanner(const int fd, char **w)
 {
