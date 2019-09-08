@@ -85,3 +85,20 @@ int			ft_findfit(t_lnk *a, int c)
 	}
 	return (0);
 }
+
+int		ft_findrange(t_lnk *a, int c)
+{
+	int	i;
+	int	x;
+
+	i = 1;
+	while (a && i < c)
+	{
+		x = ft_atoi(a->num);
+		if (x <= c)
+			return (i);
+		a = a->next;
+		i++;
+	}
+	return (0);
+}

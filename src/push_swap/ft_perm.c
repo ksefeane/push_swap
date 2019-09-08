@@ -51,24 +51,49 @@ int		ft_perm5(t_lnk *a, char **h)
 	return (1);
 }
 
+int		ft_atob(t_lnk *a, char **h)
+{
+	int	i;
+	static int	x = 0;
+	static int	c = 20;
+
+	if (x == 20)
+	{
+		x = 1;
+		c += 20;
+	}
+	i = ft_findrange(a, c);
+	if (i == 1)
+	{
+		*h = ft_strdup("pb\n");
+		x++;
+	}
+	else
+		*h = ft_strdup("ra\n");
+	return (1);
+}
+
+int		ft_btoa(t_lnk *b, char **h)
+{
+	int	i;
+
+	i = ft_findex(b, 2);
+	if (i == 1)
+		*h = ft_strdup("pa\n");
+	else
+		*h = (i < 21) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
+	return (1);
+}
+
 int		ft_perm100(t_lnk *a, t_lnk *b, char **h)
 {
-	int			i;
-	int			j;
-//	int			n;
-//	static int	c;
+	static int	s = 0;
 
-	i = ft_findex(a, 1);
-	j = ft_findex(b, 2);
-//	n = ft_lnklen(a);
-	if (!ft_sorted_q(a, NULL))
-		*h = (i < 20) ? ft_strdup("pb\n") : ft_strdup("ra\n");
+	if (ft_lnklen(a) == 0)
+		s = 1;
+	if (s == 0)
+		ft_atob(a, h);
 	else
-	{
-		if (j < 2)
-			*h = ft_strdup("pa\n");
-		else
-			*h = (j < 11) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
-	}
+		ft_btoa(b, h);
 	return (1);
 }

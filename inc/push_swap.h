@@ -50,6 +50,7 @@ int				*ft_ltoai(t_lnk *a);
 int				ft_lnklen(t_lnk *a);
 int				ft_findex(t_lnk *a, int c);
 int				ft_findfit(t_lnk *a, int c);
+int				ft_findrange(t_lnk *a, int c);
 
 int				ft_three(t_lnk **a, char **moves);
 int				ft_five(t_lnk **a, t_lnk **b, char **moves);
