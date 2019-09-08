@@ -57,34 +57,19 @@ int		ft_hunnid(t_lnk **a, t_lnk **b, char **moves)
 	char	*h;
 	char	*f;
 	char	*cache;
-	int	i;
-	int	c;
 
-	c = 5000;
-	i = 0;
 	h = NULL;
 	f = NULL;
 	cache = ft_strnew(0);
-	while (!ft_sorted_q(*a, *b) && i < c)
+	while (!ft_sorted_q(*a, *b))
 	{
 		f = cache;
 		ft_perm100(*a, *b, &h);
 		ft_instructor(a, b, h);
 		cache = ft_strjoin(cache, h);
 		free(f);
-		ft_putstr(h);
 		free(h);
-		i++;
 	}
-	ft_printer(*a, *b);
-	ft_putnbr(ft_lnklen(*a));
-	ft_putendl("a");
-	ft_putnbr(ft_lnklen(*b));
-	ft_putendl("b");
-
-	ft_putnbr(i);
-	ft_putstr(" ");
-	ft_putendl("moves");
 	*moves = ft_strdup(cache);
 	free(cache);
 	return (1);
