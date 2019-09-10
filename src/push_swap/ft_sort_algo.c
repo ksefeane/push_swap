@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 13:20:01 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 17:18:49 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/10 10:12:52 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_three(t_lnk **a, char **moves)
 {
 	char	*h;
-	t_lnk		*b;
+	t_lnk	*b;
 
 	h = NULL;
 	b = NULL;

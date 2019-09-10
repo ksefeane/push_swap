@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 13:57:21 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 16:19:35 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/10 10:31:34 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,12 @@ static int		ft_checkdigit(char *s)
 static int		ft_maxint(char *s)
 {
 	int		i;
+	char	*w;
 
-	i = 0;
-	if (ft_strequ(s, "0") || ft_strequ(s, "-1"))
-		return (1);
-	else
-		i = ft_atoi(s);
-	return ((i < -2147483647) ? 0 : 1);
+	i = ft_atoi(s);
+	w = ft_itoa(i);
+	free(w);
+	return ((ft_strequ(s, w)) ? 1 : 0);
 }
 
 static int		ft_security_checks(char **s)

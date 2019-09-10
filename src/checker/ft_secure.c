@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 14:11:08 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 15:20:37 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/10 10:22:20 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static int		ft_move_check(char **s, int (*f)(char **, char *))
 			return (0);
 		i++;
 	}
+	ft_strxdel(&r);
 	return (1);
 }
 

@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lnkdel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/10 10:14:43 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/09/10 10:15:21 by ksefeane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
 int	ft_lnkdel(t_lnk **node)
 {
 	t_lnk	*a;
 
-	a = (*node)->next;;
+	a = (*node)->next;
 	free((*node)->num);
 	free(*node);
 	*node = a;
@@ -26,8 +38,8 @@ int	ft_lnkdell(t_lnk **node)
 
 int	ft_lnkcdel(t_lnk **node, unsigned int c)
 {
-	t_lnk		*a;
-	t_lnk		*b;
+	t_lnk			*a;
+	t_lnk			*b;
 	unsigned int	i;
 
 	a = *node;

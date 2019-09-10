@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lnknew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/10 10:13:06 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/09/10 10:13:28 by ksefeane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
 t_lnk		*ft_lnknew(char *s)
@@ -15,7 +27,7 @@ t_lnk		*ft_lnknew(char *s)
 	return (k);
 }
 
-int		ft_lnkadd(t_lnk **node, char *s)
+int			ft_lnkadd(t_lnk **node, char *s)
 {
 	t_lnk		*a;
 
@@ -26,7 +38,7 @@ int		ft_lnkadd(t_lnk **node, char *s)
 	return (1);
 }
 
-int		ft_lnkaddl(t_lnk **node, char *s)
+int			ft_lnkaddl(t_lnk **node, char *s)
 {
 	t_lnk		*a;
 

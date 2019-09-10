@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 17:18:42 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/10 10:14:37 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		ft_perm5(t_lnk *a, char **h)
 
 int		ft_atob(t_lnk *a, char **h)
 {
-	int	i;
+	int			i;
 	static int	x = 0;
 	static int	c = 20;
 

@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 15:13:27 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 16:22:17 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/10 10:16:12 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ int			ft_findfit(t_lnk *a, int c)
 	return (0);
 }
 
-int		ft_findrange(t_lnk *a, int c)
+int			ft_findrange(t_lnk *a, int c)
 {
-	int	i;
-	int	x;
+	int		i;
+	int		x;
 
 	i = 1;
 	while (a && i < c)

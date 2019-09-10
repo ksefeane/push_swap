@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:16:05 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 17:19:26 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/10 10:08:33 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ typedef	struct	s_t_lnk
 }				t_lnk;
 
 t_lnk			*ft_lnknew(char *s);
-int			ft_lnkadd(t_lnk **node, char *s);
-int			ft_lnkaddl(t_lnk **node, char *s);
-int			ft_lnkdel(t_lnk **node);
-int			ft_lnkdell(t_lnk **node);
-int			ft_lnkcdel(t_lnk **node, unsigned int c);
-int			ft_lnkxdel(t_lnk **node);
+int				ft_lnkadd(t_lnk **node, char *s);
+int				ft_lnkaddl(t_lnk **node, char *s);
+int				ft_lnkdel(t_lnk **node);
+int				ft_lnkdell(t_lnk **node);
+int				ft_lnkcdel(t_lnk **node, unsigned int c);
+int				ft_lnkxdel(t_lnk **node);
 
 t_lnk			*ft_builder(char **s);
 int				ft_alldigit(char **s);

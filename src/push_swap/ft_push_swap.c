@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:22:59 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/04 16:31:49 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/10 10:14:22 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			ft_push_swap(char **av, int c, char **w)
 {
 	t_lnk		*a;
 	t_lnk		*b;
-	char	**temp;
+	char		**temp;
 
 	if (c == 1)
 	{
