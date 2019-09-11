@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:16:05 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/10 10:08:33 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/11 16:32:39 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int				ft_lnkcdel(t_lnk **node, unsigned int c);
 int				ft_lnkxdel(t_lnk **node);
 
 t_lnk			*ft_builder(char **s);
+t_lnk			*ft_lnkxdup(t_lnk *a);
 int				ft_alldigit(char **s);
 int				ft_customs(char **s, int c);
 
@@ -51,6 +52,7 @@ int				ft_lnklen(t_lnk *a);
 int				ft_findex(t_lnk *a, int c);
 int				ft_findfit(t_lnk *a, int c);
 int				ft_findrange(t_lnk *a, int c);
+int				ft_ranger(t_lnk *a);
 
 int				ft_three(t_lnk **a, char **moves);
 int				ft_five(t_lnk **a, t_lnk **b, char **moves);
@@ -58,5 +60,5 @@ int				ft_hunnid(t_lnk **a, t_lnk **b, char **moves);
 
 int				ft_perm3(t_lnk *a, char **h);
 int				ft_perm5(t_lnk *a, char **h);
-int				ft_perm100(t_lnk *a, t_lnk *b, char **h);
+int				ft_perm100(t_lnk *a, t_lnk *b, char **h, int n);
 #endif

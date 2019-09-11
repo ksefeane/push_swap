@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lnklen.c                                        :+:      :+:    :+:   */
+/*   ft_lnkdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/21 13:00:18 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/11 16:59:30 by ksefeane         ###   ########.fr       */
+/*   Created: 2019/09/11 16:14:08 by ksefeane          #+#    #+#             */
+/*   Updated: 2019/09/11 16:40:46 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int		ft_lnklen(t_lnk *a)
+static t_lnk	*ft_lnkdup(t_lnk *a)
 {
-	int		n;
-	t_lnk	*x;
+	t_lnk	*b;
 
-	if (!a)
-		return (0);
-	n = 1;
-	x = a;
-	while (x->next)
+	b = (t_lnk *)malloc(sizeof(t_lnk));
+	b->num = ft_strdup(a->num);
+	b->next = a->next;
+	return (b);
+}
+
+t_lnk	*ft_lnkxdup(t_lnk *a)
+{
+	t_lnk	*d;
+	t_lnk	*h;
+
+	d = ft_lnkdup(a);
+	h = d;
+	while (a)
 	{
-		x = x->next;
-		n++;
+		d = d->next;
+		d = ft_lnkdup(a);
+		a = a->next;
 	}
-	return (n);
+	return (h);
 }

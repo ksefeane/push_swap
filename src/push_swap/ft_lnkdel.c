@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 10:14:43 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/10 10:15:21 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/11 16:50:35 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,31 @@ int	ft_lnkdell(t_lnk **node)
 
 int	ft_lnkcdel(t_lnk **node, unsigned int c)
 {
+	unsigned int	i;
+	unsigned int	n;
 	t_lnk			*a;
 	t_lnk			*b;
-	unsigned int	i;
 
-	a = *node;
-	b = a->next;
-	a->next = a->next->next;
-	i = 2;
-	if (c == 1 || c == 0)
+	i = 1;
+	n = ft_lnklen(*node);
+	if (c == 1 || c == 0 || n == 1)
 		return ((c == 1) ? ft_lnkdel(node) : ft_lnkdell(node));
-	while (i < c)
+	a = *node;
+	b = a;
+	while (i < n)
 	{
-		a = a->next;
-		b = b->next;
-		a->next = a->next->next;
 		i++;
+		b = b->next;
+		if (i == c)
+		{
+			a->next = b->next;
+			free(b->num);
+			free(b);
+			return (1);
+		}
+		a = a->next;
 	}
-	free(b->num);
-	free(b);
-	return (1);
+	return (0);
 }
 
 int	ft_lnkxdel(t_lnk **node)

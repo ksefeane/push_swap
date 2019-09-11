@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 15:13:27 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/10 10:16:12 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/11 16:54:42 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int			ft_findex(t_lnk *a, int c)
 
 	if (!a)
 		return (0);
+	if (ft_lnklen(a) == 0)
+	{
+		ft_putendl("done");
+	}
 	x = a;
 	i = 1;
 	j = 1;
@@ -101,4 +105,25 @@ int			ft_findrange(t_lnk *a, int c)
 		i++;
 	}
 	return (0);
+}
+
+int		ft_ranger(t_lnk *a)
+{
+	int		i;
+	int		c;
+	int		n;
+	t_lnk	*d;
+
+	i = 0;
+	c = 1;
+	d = ft_lnkxdup(a);
+	n = ft_lnklen(d);
+	while (d)
+	{
+		i = ft_findex(d, 1);
+		ft_putnbr(c++); ft_putstr(" "); t(i);
+		n = ft_lnklen(d);
+		ft_lnkcdel(&d, i);
+	}
+	return (1);
 }

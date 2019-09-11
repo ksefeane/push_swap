@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_permcmp.c                                       :+:      :+:    :+:   */
+/*   ft_perm.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 11:30:26 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/10 10:14:37 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/11 16:29:33 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,22 @@ int		ft_perm5(t_lnk *a, char **h)
 	return (1);
 }
 
-int		ft_atob(t_lnk *a, char **h)
+int		ft_atob(t_lnk *a, char **h, int n)
 {
 	int			i;
+	int			j;
+	int			k;
 	static int	x = 0;
-	static int	c = 20;
+	static int	y = 1;
 
-	if (x == 20)
+	j = (n / 5) * y;
+	k = n / 5;
+	if (x == k)
 	{
-		x = 1;
-		c += 20;
+		x = 0;
+		y++;
 	}
-	i = ft_findrange(a, c);
+	i = ft_findrange(a, j);
 	if (i == 1)
 	{
 		*h = ft_strdup("pb\n");
@@ -81,18 +85,24 @@ int		ft_btoa(t_lnk *b, char **h)
 	if (i == 1)
 		*h = ft_strdup("pa\n");
 	else
-		*h = (i < 21) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
+		*h = (i < 50) ? ft_strdup("rb\n") : ft_strdup("rrb\n");
 	return (1);
 }
 
-int		ft_perm100(t_lnk *a, t_lnk *b, char **h)
+int		ft_perm100(t_lnk *a, t_lnk *b, char **h, int n)
 {
 	static int	s = 0;
+	static int	c = 0;
 
+	if (c < 1)
+	{
+		ft_ranger(a);
+		c++;
+	}
 	if (ft_lnklen(a) == 0)
 		s = 1;
 	if (s == 0)
-		ft_atob(a, h);
+		ft_atob(a, h, n);
 	else
 		ft_btoa(b, h);
 	return (1);
