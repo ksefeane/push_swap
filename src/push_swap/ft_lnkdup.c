@@ -6,34 +6,23 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 16:14:08 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/11 16:40:46 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/12 13:31:49 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static t_lnk	*ft_lnkdup(t_lnk *a)
+t_lnk	*ft_lnkdup(t_lnk *a)
 {
 	t_lnk	*b;
-
-	b = (t_lnk *)malloc(sizeof(t_lnk));
-	b->num = ft_strdup(a->num);
-	b->next = a->next;
-	return (b);
-}
-
-t_lnk	*ft_lnkxdup(t_lnk *a)
-{
-	t_lnk	*d;
 	t_lnk	*h;
 
-	d = ft_lnkdup(a);
-	h = d;
-	while (a)
+	h = a;
+	b = ft_lnknew(h->num);
+	while (h->next)
 	{
-		d = d->next;
-		d = ft_lnkdup(a);
-		a = a->next;
+		h = h->next;
+		ft_lnkaddl(&b, h->num);
 	}
-	return (h);
+	return (b);
 }
