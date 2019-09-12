@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 15:13:27 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/12 13:34:27 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/12 13:44:14 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,17 +107,21 @@ int			ft_findrange(t_lnk *a, int c)
 	return (0);
 }
 
-int		ft_ranger(t_lnk *a)
+int		*ft_ranger(t_lnk *a)
 {
 	int		i;
+	int		c;
+	int		*n;
 	t_lnk	*d;
 
-	i = 0;
+	c = 0;
 	d = ft_lnkdup(a);
+	n = (int *)malloc(sizeof(int) * ft_lnklen(d));
 	while (d)
 	{
 		i = ft_findex(d, 1);
+		n[c++] = i;
 		ft_lnkcdel(&d, i);
 	}
-	return (1);
+	return (n);
 }

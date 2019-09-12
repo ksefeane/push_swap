@@ -6,7 +6,7 @@
 /*   By: ksefeane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 13:16:05 by ksefeane          #+#    #+#             */
-/*   Updated: 2019/09/12 13:18:34 by ksefeane         ###   ########.fr       */
+/*   Updated: 2019/09/12 13:38:09 by ksefeane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include "../libft/libft.h"
 
-typedef	struct	s_t_lnk
+typedef	struct	s_lnk
 {
 	char			*num;
-	struct s_t_lnk	*next;
+	struct s_lnk	*next;
 }				t_lnk;
 
 t_lnk			*ft_lnknew(char *s);
@@ -52,7 +52,7 @@ int				ft_lnklen(t_lnk *a);
 int				ft_findex(t_lnk *a, int c);
 int				ft_findfit(t_lnk *a, int c);
 int				ft_findrange(t_lnk *a, int c);
-int				ft_ranger(t_lnk *a);
+int				*ft_ranger(t_lnk *a);
 
 int				ft_three(t_lnk **a, char **moves);
 int				ft_five(t_lnk **a, t_lnk **b, char **moves);
